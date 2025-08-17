@@ -1,14 +1,18 @@
-export default function TeamIcon() {
-  return (
-    <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              alt=""
-              src="/team-icon.jpg"
-              className="h-8 w-auto"
-            />
-          </a>
-        </div>
-  );
-}
+import Link from "next/link";
+
+export default function TeamIcon(props: { className?: string }) {
+    console.log("TeamIcon rendered with className:", props.className);
+    return (
+      <div className="flex lg:flex-1">
+          <Link href="/">
+          <span className="sr-only">Your Company</span>
+          <img
+            alt="Team Icon"
+            src="/team-icon.png"
+            className={`object-cover ${props.className}`}// ←ここを修正
+          />
+        </Link>
+      </div>
+    );
+  }
+  

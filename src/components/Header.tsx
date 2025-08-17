@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import {
   Dialog,
   DialogPanel,
@@ -22,6 +23,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import TeamIcon from './TeamIcon'
 
 const products = [
   { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
@@ -42,7 +44,10 @@ export default function Header() {
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         {/* ロゴ */}
-       
+        <Link href="/">
+  <TeamIcon className="h-20 w-70 cursor-pointer" />
+</Link>
+
 
         {/* モバイルボタン */}
         <div className="flex lg:hidden">
@@ -58,122 +63,123 @@ export default function Header() {
 
         {/* PCメニュー */}
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-         
+          <Link href="about" className="text-sm font-semibold text-black hover:text-gray-700">
+            ABOUT
+          </Link>
+          <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
+            TREANING・PRICE
+          </Link>
 
-          <a href="#" className="text-sm font-semibold text-black hover:text-gray-700">
-            Features
-          </a>
-          <a href="#" className="text-sm font-semibold text-black hover:text-gray-700">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm font-semibold text-black hover:text-gray-700">
-            Company
-          </a>
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-black">
-              Product
+              PROGRAM
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 text-gray-500" />
             </PopoverButton>
 
             <PopoverPanel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-black text-white shadow-lg">
-            <div className="p-4 bg-white">
-  {products.map((item) => (
-    <div
-      key={item.name}
-      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-black hover:text-white"
-    >
-      <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-800">
-        <item.icon aria-hidden="true" className="h-6 w-6 text-black group-hover:text-white" />
-      </div>
-      <div className="flex-auto">
-        <a href={item.href} className="block font-semibold text-black group-hover:text-white">
-          {item.name}
-        </a>
-        <p className="mt-1 text-gray-700 group-hover:text-gray-300">{item.description}</p>
-      </div>
-    </div>
-  ))}
-</div>
+              <div className="p-4 bg-white">
+                {products.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-black hover:text-white"
+                  >
+                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-800">
+                      <item.icon aria-hidden="true" className="h-6 w-6 text-black group-hover:text-white" />
+                    </div>
+                    <div className="flex-auto">
+                      <Link href={item.href} className="block font-semibold text-black group-hover:text-white">
+                        {item.name}
+                      </Link>
+                      <p className="mt-1 text-gray-700 group-hover:text-gray-300">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
               <div className="grid grid-cols-2 divide-x divide-white/10 bg-gray-700/50">
                 {callsToAction.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold text-white hover:bg-gray-600"
                   >
                     <item.icon aria-hidden="true" className="h-5 w-5 text-white" />
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </PopoverPanel>
           </Popover>
+
+          <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
+            CONTACT
+          </Link>
+          <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
+            ACHIEVEMENT
+          </Link>
+          <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
+            COACH
+          </Link>
         </PopoverGroup>
       </nav>
 
       {/* モバイルメニュー */}
-      {/* モバイルメニュー */}
-<Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
-  <div className="fixed inset-0 z-50" />
-  <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm text-black">
-    <div className="flex items-center justify-between">
-      <a href="#" className="-m-1.5 p-1.5">
-        <span className="sr-only">Your Company</span>
-        <img
-          alt=""
-          src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-          className="h-8 w-auto"
-        />
-      </a>
-      <button
-        type="button"
-        onClick={() => setMobileMenuOpen(false)}
-        className="-m-2.5 rounded-md p-2.5 text-black"
-      >
-        <span className="sr-only">Close menu</span>
-        <XMarkIcon aria-hidden="true" className="h-6 w-6" />
-      </button>
-    </div>
+      <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
+        <div className="fixed inset-0 z-50" />
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm text-black">
+          <div className="flex items-center justify-between">
+            <TeamIcon className="h-10 w-10" />
 
-    <div className="mt-6 flow-root">
-      <div className="-my-6 divide-y divide-gray-200">
-        <div className="space-y-2 py-6">
-         
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="-m-2.5 rounded-md p-2.5 text-black"
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+            </button>
+          </div>
 
-          <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
-            Features
-          </a>
-          <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
-            Marketplace
-          </a>
-          <a href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
-            Company
-          </a>
-          <Disclosure as="div" className="-mx-3">
-            <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
-              Product
-              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
-            </DisclosureButton>
-            <DisclosurePanel className="mt-2 space-y-2">
-              {[...products, ...callsToAction].map((item) => (
-                <DisclosureButton
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold text-black hover:bg-gray-900 hover:text-white"
-                >
-                  {item.name}
-                </DisclosureButton>
-              ))}
-            </DisclosurePanel>
-          </Disclosure>
-        </div>
-      </div>
-    </div>
-  </DialogPanel>
-</Dialog>
-
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-200">
+              <div className="space-y-2 py-6">
+                <Link href="about" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                  ABOUT
+                </Link>
+                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                  TREANING・PRICE
+                </Link>
+                <Disclosure as="div" className="-mx-3">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                    PROGRAM
+                    <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
+                  </DisclosureButton>
+                  <DisclosurePanel className="mt-2 space-y-2">
+                    {[...products, ...callsToAction].map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold text-black hover:bg-gray-900 hover:text-white"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </DisclosurePanel>
+                </Disclosure>
+                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                  CONTACT
+                </Link>
+                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                  ACHIEVEMENT
+                </Link>
+                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                  COACH
+                </Link>
+              </div>
+            </div>
+          </div>
+        </DialogPanel>
+      </Dialog>
     </header>
   )
 }

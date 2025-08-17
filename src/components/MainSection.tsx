@@ -25,14 +25,18 @@ export default function MainSection() {
       </div>
 
       <section className="p-8 max-w-3xl mx-auto">
-        <h3 className="text-xl text-black font-semibold mb-4">Dashboard</h3>
+        <h3 className="text-xl text-black font-semibold mb-4">～ 世界への挑戦はここから ～</h3>
         <p className="mb-6 text-gray-700">
-          This is a sample main page with a hero image for your Next.js 15 app using Tailwind CSS.
+        サッカーのピッチで自分だけの武器を身に着け
+             明確な夢を持てる選手の育成 
         </p>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
-          Get Started
+        <button className="bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:bg-[rgb(164,88,88)] transition">
+          プログラム＆料金一覧へ
         </button>
       </section>
+
+
+      
     </main>
   )
 }
