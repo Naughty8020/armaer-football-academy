@@ -11,11 +11,16 @@ export default function MainSection() {
         height={1080}
         className="absolute inset-0 w-full h-full object-cover object-center" 
         />
-     <div className="absolute inset-0 bg-opacity-40 flex items-center justify-end p-4 sm:p-8 md:p-16 lg:p-60">
-  <h2 className="text-black text-2xl sm:text-3xl md:text-4xl font-bold text-right">
-    Your Amazing App
+<div className="absolute inset-0 bg-opacity-40 flex flex-col items-end justify-center p-4 sm:p-8 md:p-16 lg:p-20">
+  <h2 className="text-[rgb(241,84,84)] text-2xl sm:text-3xl md:text-4xl font-bold text-right">
+    ARMAER FOOTBALL ACADEMY<br />
   </h2>
+  <p className="text-white text-right mt-2">
+    滋賀県近江八幡市を拠点に活動しているサッカースクール<br />
+    対象は小学1年生から中学３年生まで
+  </p>
 </div>
+
 
       </div>
 

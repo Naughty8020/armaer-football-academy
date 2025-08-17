@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
 
      <Header />
-        <main className="p-4">{children}</main>
+        <main >{children}</main>
        <Footer />
       </body>
     </html>
