@@ -7,18 +7,19 @@ export default function AboutPage() {
           id="home"
           className="flex-1 flex flex-col-reverse md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 py-12 bg-gray-50"
         >
-          <div className="md:w-1/2">
+          <div className="md:w-4/5">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[rgb(55,76,144)] mb-4">
               MISSION
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-800">
-              子ども達には無限の可能性があります。
+              子ども達には無限の可能性があります。<br />
   
-              そんな子ども達が持つ可能性を引き出すべく、
+              そんな子ども達が持つ可能性を引き出すべく
   
-              子ども達一人一人がサッカーに本気で向き合い
+              子ども達一人一人が<br/>
+              サッカーに本気で向き合い
   
-              ピッチで戦うための武器と将来の夢を明確に
+              ピッチで戦うための武器と将来の夢を明確に<br />
   
               持つ事の出来る選手の育成を目指します。
             </p>
@@ -27,7 +28,7 @@ export default function AboutPage() {
             <img
               src="/coaches.jpeg"
               alt="Profile Picture"
-              className="w-150 h-64 sm:w-130 sm:h-80 bg-gray-300 object-cover"
+              className="w-160 h-64 sm:w-110 sm:h-80 bg-gray-300 object-cover"
             />
           </div>
         </section>
@@ -45,11 +46,11 @@ export default function AboutPage() {
   
             これは子ども達それぞれの武器を持って
   
-            欲しいという願いから来ています。
+            欲しいという願いから来ています。<br />
   
             最後についているERは武器になるのではなく
   
-            武器をもつ”人”になってほしいという願い
+            武器をもつ”人”になってほしいという願い<br />
   
             そして、夢を追いかける、DREAMER から
   
