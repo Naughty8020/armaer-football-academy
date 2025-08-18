@@ -1,4 +1,4 @@
-export default function NewsSection() {
+export default async  function NewsSection() {
     const newsList = [
       {
         title: "New Feature Released",
@@ -19,7 +19,20 @@ export default function NewsSection() {
         href: "#",
       },
     ];
+
+    const apiKey = process.env.MY_API_KEY;
+
+    const res = await fetch("https://example.com/data", {
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+      },
+    });
   
+    const data = await res.json();
+  
+   
+
+
     return (
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

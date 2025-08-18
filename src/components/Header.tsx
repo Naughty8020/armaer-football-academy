@@ -117,7 +117,7 @@ export default function Header() {
           <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
             ACHIEVEMENT
           </Link>
-          <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
+          <Link href="coach" className="text-sm font-semibold text-black hover:text-gray-700">
             COACH
           </Link>
         </PopoverGroup>
@@ -172,7 +172,7 @@ export default function Header() {
                 <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   ACHIEVEMENT
                 </Link>
-                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="coach" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   COACH
                 </Link>
               </div>
