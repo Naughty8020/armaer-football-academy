@@ -39,7 +39,7 @@ export default function AboutPage() {
           className="px-6 sm:px-10 md:px-16 py-12 bg-gray-50"
         >
           <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-[rgb(55,76,144)]">
-            About Us
+            ABOUT US
           </h2>
           <p className="text-lg sm:text-xl font-medium text-gray-800">
             ARMAはスペイン語で”武器”という意味です。

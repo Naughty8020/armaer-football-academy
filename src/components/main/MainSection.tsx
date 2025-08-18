@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Button from "../Button"
 
 export default function MainSection() {
   return (
@@ -30,9 +31,15 @@ export default function MainSection() {
         サッカーのピッチで自分だけの武器を身に着け
              明確な夢を持てる選手の育成 
         </p>
-        <button className="bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:bg-[rgb(164,88,88)] transition">
-          プログラム＆料金一覧へ
-        </button>
+       
+          
+      
+
+        <Button href="/contact" className="bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:bg-[rgb(164,88,88)] transition inline-block">
+  プログラム＆料金一覧へ
+</Button>
+
+
       </section>
 
 

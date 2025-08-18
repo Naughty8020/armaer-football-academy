@@ -111,7 +111,7 @@ export default function Header() {
             </PopoverPanel>
           </Popover>
 
-          <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
+          <Link href="contact" className="text-sm font-semibold text-black hover:text-gray-700">
             CONTACT
           </Link>
           <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
@@ -166,7 +166,7 @@ export default function Header() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="contact" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   CONTACT
                 </Link>
                 <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
