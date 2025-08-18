@@ -1,57 +1,65 @@
 export default async  function NewsSection() {
-    const newsList = [
-      {
-        title: "New Feature Released",
-        date: "2025-08-17",
-        description: "We just launched an amazing new feature for all users.",
-        href: "#",
-      },
-      {
-        title: "Weekly Update",
-        date: "2025-08-10",
-        description: "Check out the latest improvements and bug fixes this week.",
-        href: "#",
-      },
-      {
-        title: "Community Event",
-        date: "2025-08-05",
-        description: "Join our online community event and meet other users.",
-        href: "#",
-      },
-    ];
 
-    const apiKey = process.env.MY_API_KEY;
+  
+      type NewsItem = {
+      id: string;
+      title: string;
+      date: string;
+      contents: string;
+      images?: {
+        url: string;
+        width: number;
+        height: number;
+      }
+      href: string;
+    };
+    
 
-    const res = await fetch("https://example.com/data", {
+    const apiKey = process.env.NEWS_API_KEY;
+    const res = await fetch("https://armaer-football.microcms.io/api/v1/news", {
       headers: {
-        Authorization: `Bearer ${apiKey}`,
+        "X-MICROCMS-API-KEY": apiKey as string,
+        "Content-Type": "application/json",
       },
     });
+    
   
     const data = await res.json();
-  
+    const news: NewsItem[] = data.contents;
    
-
+console.log(news);
 
     return (
       <section className="bg-gray-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Latest News</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {newsList.map((news) => (
-              <a
-                key={news.title}
-                href={news.href}
-                className="block rounded-lg bg-white p-6 shadow hover:shadow-lg transition"
-              >
-                <h3 className="text-xl font-semibold text-gray-900">{news.title}</h3>
-                <p className="mt-2 text-sm text-gray-500">{news.date}</p>
-                <p className="mt-4 text-gray-700">{news.description}</p>
-              </a>
-            ))}
+          <div className="flex flex-col gap-6">
+            {news && news.length > 0 ? (
+              news.map((item: NewsItem) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  className="flex gap-4 p-4 bg-white rounded shadow hover:bg-gray-100 transition"
+                >
+                  {item.images && (
+                    <img
+                      src={item.images.url}
+                      alt={item.title}
+                      className="w-32 h-20 object-cover rounded"
+                    />
+                  )}
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
+                    <p className="text-sm text-gray-500">{item.date}</p>
+                    <p className="mt-2 text-gray-700">{item.contents}</p>
+                  </div>
+                </a>
+              ))
+            ) : (
+              <p className="text-gray-500 text-center">ニュースはまだありません</p>
+            )}
           </div>
         </div>
       </section>
     );
   }
-  
