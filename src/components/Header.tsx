@@ -44,9 +44,9 @@ export default function Header() {
     <header className="bg-white">
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         {/* ロゴ */}
-        <Link href="/">
+  
   <TeamIcon className="h-20 w-70 cursor-pointer" />
-</Link>
+
 
 
         {/* モバイルボタン */}
