@@ -12,7 +12,7 @@ export default function BlogSection() {
       練習の様子や試合のレポート、コーチからのメッセージなどを発信中。<br />
       サッカースクールの日常や最新情報をブログでチェックしよう！
     </p>
-    <Button
+<Button
   href="/contact"
   className="bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:bg-[rgb(164,88,88)] transition inline-flex items-center gap-2"
 >

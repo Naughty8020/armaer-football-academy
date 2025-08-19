@@ -5,16 +5,17 @@ import BlogSection from "@/components/main/BlogSection"
 import ContactSection from "@/components/main/ContactSection"
 
 export default function Home() {
-  return(
-    <>
-     <MainSection />
-     <AboutSection />
-   
- 
-   <ContactSection />
-   <NewsSection />
-   <BlogSection />
-    </>
-   
-  ) 
+  return (
+    <div className="relative min-h-screen bg-fixed bg-cover bg-center"
+         style={{ backgroundImage: "url('/background.jpg')" }}>
+      <div className="space-y-24">
+        <MainSection />
+        <AboutSection />
+        <ContactSection />
+        <NewsSection />
+        <BlogSection />
+      </div>
+    </div>
+  );
 }
+
