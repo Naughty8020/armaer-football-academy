@@ -1,31 +1,15 @@
+import { NewsItem } from "@/lib/news";
+import { fetchData } from "@/lib/fetchData";
+
+
 export default async  function NewsSection() {
 
   
-      type NewsItem = {
-      id: string;
-      title: string;
-      date: string;
-      contents: string;
-      images?: {
-        url: string;
-        width: number;
-        height: number;
-      }
-      href: string;
-    };
+  
     
 
-    const apiKey = process.env.NEWS_API_KEY;
-    const res = await fetch("https://armaer-football.microcms.io/api/v1/news", {
-      headers: {
-        "X-MICROCMS-API-KEY": apiKey as string,
-        "Content-Type": "application/json",
-      },
-    });
-    
   
-    const data = await res.json();
-    const news: NewsItem[] = data.contents;
+  const news = await fetchData<NewsItem>("news");
    
 console.log(news);
 
