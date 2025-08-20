@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
 
      <Header />
-        <main className='bg-gray-50' >{children}</main>
+        <main className='bg-white' >{children}</main>
        <Footer />
       </body>
     </html>

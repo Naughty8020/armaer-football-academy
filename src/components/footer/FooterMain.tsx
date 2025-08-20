@@ -3,7 +3,7 @@ export default function FooterMain() {
     <>
     
     <div
-      className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16"
+      className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-4 lg:pt-16 "
     >
       <div>
         <p className="font-medium text-gray-900">Services</p>

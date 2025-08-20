@@ -3,7 +3,8 @@ import Button from "../Button"
 
 export default function MainSection() {
   return (
-    <main className="relative " >
+    <main className="relative bg-amber-50 " >
+    
       <div className="relative h-[60vh] w-full overflow-hidden">
         <Image
         src="/unsplash/adria-crehuet-cano-zideC_21IyY-unsplash.jpg"

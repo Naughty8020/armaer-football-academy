@@ -1,6 +1,4 @@
 "use client";
-// components/NewsSection.tsx
-// Make sure to import the new component
 import CustomButton from '@/components/Button';
 import { useState, useEffect } from "react";
 import { NewsItem } from "@/lib/news";
@@ -10,6 +8,17 @@ export default function NewsSection() {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [loading, setLoading] = useState(true);
   const [visibleItems, setVisibleItems] = useState(3);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 画面幅判定（モバイルかどうか）
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // md未満はモバイル
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     fetch("/api/news")
@@ -27,55 +36,58 @@ export default function NewsSection() {
   const toggleExpand = (id: string) => {
     setExpandedIds(prev => {
       const newSet = new Set(prev);
-      if (newSet.has(id)) {
-        newSet.delete(id);
-      } else {
-        newSet.add(id);
-      }
+      if (newSet.has(id)) newSet.delete(id);
+      else newSet.add(id);
       return newSet;
     });
   };
 
-  const loadMore = () => {
-    setVisibleItems(prev => prev + 3);
-  };
+  const loadMore = () => setVisibleItems(prev => prev + 3);
 
   if (loading) return <p className="text-center text-gray-500">読み込み中…</p>;
 
+  const maxLength = isMobile ? 50 : 150;
+
   return (
-    <section className="bg-white py-16">
+    <section className="bg-white mb-20 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Latest News</h2>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3 sm:gap-6">
           {news.length > 0 ? (
             news.slice(0, visibleItems).map(item => {
               const isExpanded = expandedIds.has(item.id);
-              const isLong = item.contents.length > 250;
+              const isLong = item.contents.length > maxLength;
+
               return (
                 <div
                   key={item.id}
-                  className="flex gap-4 p-4 bg-white rounded shadow hover:bg-gray-100 transition flex-col"
+                  className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded shadow hover:bg-gray-100 transition flex-col"
                 >
-                  <div className="flex gap-4">
+                  <div className="flex gap-3 sm:gap-4">
                     {item.images && (
                       <img
                         src={item.images.url}
                         alt={item.title}
-                        className="w-32 h-20 object-cover rounded"
+                        className="w-24 h-16 sm:w-32 sm:h-20 object-cover rounded"
                       />
                     )}
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
-                      <p className="text-sm text-gray-500">{item.date}</p>
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{item.title}</h3>
+                      <p className="text-xs sm:text-sm text-gray-900">{item.date}</p>
                     </div>
                   </div>
-                  <p className={`mt-2 text-gray-700 ${isLong && !isExpanded ? "line-clamp-3" : ""}`}>
-                    {item.contents}
+
+                  <p className="mt-1 sm:mt-2 text-sm  sm:text-gray-900 text-gray-900">
+                    {isExpanded
+                      ? item.contents
+                      : item.contents.slice(0, maxLength) + (isLong ? "…" : "")
+                    }
                   </p>
+
                   {isLong && (
                     <button
                       onClick={() => toggleExpand(item.id)}
-                      className="mt-2 text-blue-500 text-sm hover:underline self-start"
+                      className="mt-1 sm:mt-2 text-blue-500 text-xs sm:text-sm hover:underline self-start"
                     >
                       {isExpanded ? "閉じる" : "もっと見る"}
                     </button>
@@ -84,11 +96,10 @@ export default function NewsSection() {
               );
             })
           ) : (
-            <p className="text-gray-500 text-center">ニュースはまだありません</p>
+            <p className="text-gray-900 text-center">ニュースはまだありません</p>
           )}
         </div>
 
-        {/* Use the new CustomButton component here */}
         {visibleItems < news.length && (
           <div className="text-center mt-8">
             <CustomButton
