@@ -22,15 +22,15 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, PhoneIcon, CurrencyYenIcon,ChatBubbleBottomCenterTextIcon } from '@heroicons/react/20/solid'
 import TeamIcon from './TeamIcon'
 import { usePrograms } from './main/HeaderSection'
 
 
 
 const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+  { name: '料金一覧', href: '', icon: CurrencyYenIcon },
+  { name: 'お申し込み', href: 'contact', icon: ChatBubbleBottomCenterTextIcon },
 ]
 
 export default function Header() {
