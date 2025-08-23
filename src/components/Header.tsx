@@ -24,14 +24,10 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import TeamIcon from './TeamIcon'
+import { usePrograms } from './main/HeaderSection'
 
-const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
-]
+
+
 const callsToAction = [
   { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
   { name: 'Contact sales', href: '#', icon: PhoneIcon },
@@ -39,6 +35,13 @@ const callsToAction = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { programs, loading } = usePrograms()
+  const programItems = programs.map((program) => ({
+    title: program.title,
+    
+  }))
+
+  console.log('Program items:', programItems) // デバッグ用
 
   return (
     <header className="bg-white">
@@ -76,39 +79,34 @@ export default function Header() {
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 text-gray-500" />
             </PopoverButton>
 
-            <PopoverPanel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-black text-white shadow-lg">
-              <div className="p-4 bg-white">
-                {products.map((item) => (
-                  <div
-                    key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm hover:bg-black hover:text-white"
-                  >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gray-100 group-hover:bg-gray-800">
-                      <item.icon aria-hidden="true" className="h-6 w-6 text-black group-hover:text-white" />
-                    </div>
-                    <div className="flex-auto">
-                      <Link href={item.href} className="block font-semibold text-black group-hover:text-white">
-                        {item.name}
-                      </Link>
-                      <p className="mt-1 text-gray-700 group-hover:text-gray-300">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <PopoverPanel className="absolute left-1/2 z-10 mt-3 w-screen max-w-lg -translate-x-1/2 overflow-hidden rounded-3xl bg-white text-black shadow-lg border-2 border-black">
+  <div className="mx-3 my-4">
+    <div className="grid grid-cols-1 gap-2 p-4">
+      {programItems.map((item, index) => (
+        <div
+          key={index}
+          className="p-3 border border-gray-300 rounded-lg text-center text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
+        >
+          {item.title}
+        </div>
+      ))}
+    </div>
+  </div>
 
-              <div className="grid grid-cols-2 divide-x divide-white/10 bg-gray-700/50">
-                {callsToAction.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold text-white hover:bg-gray-600"
-                  >
-                    <item.icon aria-hidden="true" className="h-5 w-5 text-white" />
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </PopoverPanel>
+  <div className="grid grid-cols-2 divide-x divide-gray-200 bg-gray-100">
+    {callsToAction.map((item) => (
+      <Link
+        key={item.name}
+        href={item.href}
+        className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold text-black hover:bg-gray-200"
+      >
+        <item.icon aria-hidden="true" className="h-5 w-5 text-black" />
+        {item.name}
+      </Link>
+    ))}
+  </div>
+</PopoverPanel>
+
           </Popover>
 
           <Link href="contact" className="text-sm font-semibold text-black hover:text-gray-700">
@@ -155,16 +153,19 @@ export default function Header() {
                     <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold text-black hover:bg-gray-900 hover:text-white"
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </DisclosurePanel>
+  {/* スマホでもプログラムタイトルを表示 */}
+  {programItems.map((item, index) => (
+    <div
+      key={index}
+      className="block rounded-lg py-2 px-3 text-sm font-medium text-black hover:bg-gray-200"
+    >
+      {item.title}
+    </div>
+  ))}
+
+
+</DisclosurePanel>
+
                 </Disclosure>
                 <Link href="contact" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   CONTACT
