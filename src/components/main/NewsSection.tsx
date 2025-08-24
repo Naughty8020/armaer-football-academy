@@ -49,7 +49,7 @@ export default function NewsSection() {
   const maxLength = isMobile ? 50 : 150;
 
   return (
-    <section className="bg-white mb-20 py-16">
+    <section className="bg-white mb-5 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Latest News</h2>
         <div className="flex flex-col gap-3 sm:gap-6">

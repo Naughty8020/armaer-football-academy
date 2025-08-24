@@ -3,6 +3,7 @@ import NewsSection from "@/components/main/NewsSection"
 import AboutSection from "@/components/main/AboutSection"
 import BlogSection from "@/components/main/BlogSection"
 import ContactSection from "@/components/main/ContactSection"
+import LineSection from "@/components/contact/LineSection"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <AboutSection />
         <ContactSection />
         <NewsSection />
+        <LineSection />
         <BlogSection />
       </div>
     </div>
