@@ -7,7 +7,7 @@ import './globals.css';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
-      <body>
+      <body >
 
      <Header />
         <main className='bg-white' >{children}</main>
