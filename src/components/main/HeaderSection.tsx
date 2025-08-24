@@ -13,7 +13,7 @@ export function usePrograms() {
       .then((data: ProgramsItem[]) => {
         setPrograms(data)
         setLoading(false)
-        console.log('Fetched programs:', data) 
+
       })
       .catch(err => {
         console.error(err)

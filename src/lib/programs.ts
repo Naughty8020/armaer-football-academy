@@ -31,5 +31,6 @@ export type ProgramsItem = {
     image7?: string;
   
     other?: string; // richEditorV2
+    id: string; // URLスラッグ (オプション)
   };
   

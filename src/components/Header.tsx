@@ -38,10 +38,9 @@ export default function Header() {
   const { programs, loading } = usePrograms()
   const programItems = programs.map((program) => ({
     title: program.title,
+    id: program.id, 
     
   }))
-
-  console.log('Program items:', programItems) // デバッグ用
 
   return (
     <header className="bg-white">
@@ -82,14 +81,15 @@ export default function Header() {
             <PopoverPanel className="absolute left-1/2 z-10 mt-3 w-screen max-w-lg -translate-x-1/2 overflow-hidden rounded-3xl bg-white text-black shadow-lg border-2 border-black">
   <div className="mx-3 my-4">
     <div className="grid grid-cols-1 gap-2 p-4">
-      {programItems.map((item, index) => (
-        <div
-          key={index}
-          className="p-3 border border-gray-300 rounded-lg text-center text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
-        >
-          {item.title}
-        </div>
-      ))}
+    {programItems.map((item) => (
+  <Link
+    key={item.id}
+    href={`/programs/${item.id}`} // プログラムの詳細ページへのリンク
+    className="block p-3 border border-gray-300 rounded-lg text-center text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
+  >
+    {item.title}
+  </Link>
+))}
     </div>
   </div>
 
