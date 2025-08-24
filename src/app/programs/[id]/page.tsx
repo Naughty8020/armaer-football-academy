@@ -30,60 +30,60 @@ export default async function ProgramPage({
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-black space-y-8">
-      <h1 className="text-2xl font-bold">{program.title}</h1>
+      <h1 className=" mt-20 text-2xl font-bold">{program.title}</h1>
 
       {program.title1 && (
         <section>
-          <h2 className="text-xl font-semibold mb-2">{program.title1}</h2>
+          <h2 className=" mt-15 text-xl font-semibold mb-2">{program.title1}</h2>
           <p className="whitespace-pre-line">{program.detail1}</p>
         </section>
       )}
 
       {program.title2 && (
         <section>
-          <h2 className="text-xl font-semibold mb-2">{program.title2}</h2>
+          <h2 className=" mt-15 text-xl font-semibold mb-2">{program.title2}</h2>
           <p className="whitespace-pre-line">{program.detail2}</p>
         </section>
       )}
 
       {program.title3 && (
         <section>
-          <h2 className="text-xl font-semibold mb-2">{program.title3}</h2>
+          <h2 className=" mt-15 text-xl font-semibold mb-2">{program.title3}</h2>
           <p className="whitespace-pre-line">{program.detail3}</p>
         </section>
       )}
 
       {program.title4 && (
         <section>
-          <h2 className="text-xl font-semibold mb-2">{program.title4}</h2>
+          <h2 className=" mt-15 text-xl font-semibold mb-2">{program.title4}</h2>
           <p className="whitespace-pre-line">{program.detail4}</p>
         </section>
       )}
 
       {program.title5 && (
         <section>
-          <h2 className="text-xl font-semibold mb-2">{program.title5}</h2>
+          <h2 className=" mt-15 text-xl font-semibold mb-2">{program.title5}</h2>
           <p className="whitespace-pre-line">{program.detail5}</p>
         </section>
       )}
 
       {program.title6 && (
         <section>
-          <h2 className="text-xl font-semibold mb-2">{program.title6}</h2>
+          <h2 className="mt-15 mt-3text-xl font-semibold mb-2">{program.title6}</h2>
           <p className="whitespace-pre-line">{program.detail6}</p>
         </section>
       )}
 
       {program.title7 && (
         <section>
-          <h2 className="text-xl font-semibold mb-2">{program.title7}</h2>
+          <h2 className=" mt-15 text-xl font-semibold mb-2">{program.title7}</h2>
           <p className="whitespace-pre-line">{program.detail7}</p>
         </section>
       )}
 
 {program.other && (
   <section
-    className="prose max-w-none"
+    className=" mt-20 prose max-w-none"
     dangerouslySetInnerHTML={{
       __html: program.other.replace(
         /<a /g,

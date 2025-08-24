@@ -5,7 +5,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section
           id="home"
-          className="flex-1 flex flex-col-reverse md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 py-12 bg-gray-50"
+          className="flex-1 flex flex-col-reverse md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 py-12 bg-white"
         >
           <div className="md:w-4/5">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[rgb(55,76,144)] mb-4">
@@ -36,7 +36,7 @@ export default function AboutPage() {
         {/* About Us Section */}
         <section
           id="about"
-          className="px-6 sm:px-10 md:px-16 py-12 bg-gray-50"
+          className="px-6 sm:px-10 md:px-16 py-12 bg-white"
         >
           <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-[rgb(55,76,144)]">
             ABOUT US
@@ -63,14 +63,14 @@ export default function AboutPage() {
         {/* Services Section */}
         <section
           id="services"
-          className="px-6 sm:px-10 md:px-16 py-12 bg-gray-50"
+          className="px-6 sm:px-10 md:px-16 py-12 bg-white"
         >
           <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-[rgb(55,76,144)]">
             育成について
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1 */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
+            <div className="bg-blue-100 shadow-md rounded-lg p-6 flex flex-col items-center text-center">
               <i className="fas fa-user-friends text-black text-3xl mb-4"></i>
               <h3 className="text-black text-2xl font-semibold mb-2">
                 人間性
@@ -90,7 +90,7 @@ export default function AboutPage() {
               </p>
             </div>
             {/* Card 2 */}
-            <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center text-center">
+            <div className="bg-red-100 shadow-md rounded-lg p-6 flex flex-col items-center text-center">
               <i className="fas fa-futbol text-black text-3xl mb-4"></i>
               <h3 className="text-black text-2xl font-semibold mb-2">
                 スキル
@@ -122,7 +122,7 @@ export default function AboutPage() {
           </div>
         </section>
   
-        <section className="flex flex-col items-center justify-center px-6 sm:px-10 md:px-16 py-12 bg-gray-50 text-black text-center">
+        <section className="flex flex-col items-center justify-center px-6 sm:px-10 md:px-16 py-12 bg-white text-black text-center">
   <h2 className="text-3xl font-semibold mb-4">Soccer School</h2>
   <p className="text-gray-800 max-w-2xl">
     サッカーのピッチで自分だけの武器と

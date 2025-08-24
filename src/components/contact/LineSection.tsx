@@ -1,6 +1,6 @@
 export default function LineSection() {
     return (
-      <section id="contact" className="bg-gray-50 py-20">
+      <section id="contact" className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           {/* タイトル */}
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
