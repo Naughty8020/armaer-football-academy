@@ -23,8 +23,8 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, CurrencyYenIcon,ChatBubbleBottomCenterTextIcon } from '@heroicons/react/20/solid'
-import TeamIcon from './TeamIcon'
-import { usePrograms } from './main/HeaderSection'
+import TeamIcon from '../ui/TeamIcon'
+import { usePrograms } from '../main/HeaderSection'
 
 
 

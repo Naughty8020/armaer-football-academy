@@ -1,6 +1,6 @@
 import FooterMain from "@/components/footer/FooterMain";
-import TeamIcon from "../TeamIcon";
-import SnsIcons from "../SnsIcons";
+import TeamIcon from "../ui/TeamIcon";
+import SnsIcons from "../ui/SnsIcons";
 
 
 

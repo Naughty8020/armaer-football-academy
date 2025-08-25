@@ -1,5 +1,5 @@
 import { SlNote } from "react-icons/sl";
-import Button from "../Button";
+import Button from "../ui/Button";
 
 export default function BlogSection() {
   return (

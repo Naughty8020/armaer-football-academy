@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Button from "../Button"
+import Button from "../ui/Button"
 
 export default function MainSection() {
   return (
@@ -36,7 +36,7 @@ export default function MainSection() {
           
       
 
-        <Button href="/contact" className="bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:bg-[rgb(164,88,88)] transition inline-block">
+        <Button href="/training" className="bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:bg-[rgb(164,88,88)] transition inline-block">
   プログラム＆料金一覧へ
 </Button>
 

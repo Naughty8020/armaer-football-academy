@@ -1,5 +1,5 @@
 "use client";
-import CustomButton from '@/components/Button';
+import CustomButton from '@/components/ui/Button';
 import { useState, useEffect } from "react";
 import { NewsItem } from "@/lib/news";
 
