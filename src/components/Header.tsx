@@ -29,8 +29,8 @@ import { usePrograms } from './main/HeaderSection'
 
 
 const callsToAction = [
-  { name: '料金一覧', href: '', icon: CurrencyYenIcon },
-  { name: 'お申し込み', href: 'contact', icon: ChatBubbleBottomCenterTextIcon },
+  { name: '料金一覧', href: '/training', icon: CurrencyYenIcon },
+  { name: 'お申し込み', href: '/contact', icon: ChatBubbleBottomCenterTextIcon },
 ]
 
 export default function Header() {
@@ -69,10 +69,10 @@ export default function Header() {
         <Link href="/" className="text-sm font-semibold text-black hover:text-gray-700">
             HOME
           </Link>
-          <Link href="about" className="text-sm font-semibold text-black hover:text-gray-700">
+          <Link href="/about" className="text-sm font-semibold text-black hover:text-gray-700">
             ABOUT
           </Link>
-          <Link href="training" className="text-sm font-semibold text-black hover:text-gray-700">
+          <Link href="/training" className="text-sm font-semibold text-black hover:text-gray-700">
             TREANING・PRICE
           </Link>
 
@@ -113,13 +113,13 @@ export default function Header() {
 
           </Popover>
 
-          <Link href="contact" className="text-sm font-semibold text-black hover:text-gray-700">
+          <Link href="/contact" className="text-sm font-semibold text-black hover:text-gray-700">
             CONTACT
           </Link>
-          <Link href="#" className="text-sm font-semibold text-black hover:text-gray-700">
+          <Link href="achievement" className="text-sm font-semibold text-black hover:text-gray-700">
             ACHIEVEMENT
           </Link>
-          <Link href="coach" className="text-sm font-semibold text-black hover:text-gray-700">
+          <Link href="/coach" className="text-sm font-semibold text-black hover:text-gray-700">
             COACH
           </Link>
         </PopoverGroup>
@@ -148,10 +148,10 @@ export default function Header() {
               <Link href="/" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   HOME
                 </Link>
-                <Link href="about" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/about" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   ABOUT
                 </Link>
-                <Link href="training" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/training" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   TREANING・PRICE
                 </Link>
                 <Disclosure as="div" className="-mx-3">
@@ -174,13 +174,13 @@ export default function Header() {
 </DisclosurePanel>
 
                 </Disclosure>
-                <Link href="contact" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/contact" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   CONTACT
                 </Link>
-                <Link href="#" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/achievement" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   ACHIEVEMENT
                 </Link>
-                <Link href="coach" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/coach" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   COACH
                 </Link>
               </div>

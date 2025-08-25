@@ -54,11 +54,11 @@ export default function TrainingAndPricing() {
         <h1 className="text-2xl font-bold mb-4 text-black">料金一覧</h1>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
           {pricingSections.map((section) => (
-            <div key={section.title} className="bg-white shadow-lg rounded-2xl p-6">
+            <div key={section.title} className="bg-gray-100 shadow-lg rounded-2xl p-6">
               <h2 className="text-xl font-bold mb-4 text-black">{section.title}</h2>
               <ul className="space-y-3">
                 {section.plans.map((plan) => (
-                  <li key={plan.name} className="border border-gray-200 rounded-lg p-4">
+                  <li key={plan.name} className="border border-gray-950 rounded-lg p-4">
                     <div className="flex justify-between items-center text-black">
                       <span className="font-medium">{plan.name} {plan.detail && `(${plan.detail})`}</span>
                       <span className="font-bold">{plan.price}</span>
@@ -71,7 +71,7 @@ export default function TrainingAndPricing() {
         </div>
   
         {/* 下：会費カード */}
-        <div className="bg-white shadow-lg rounded-2xl p-6 text-center">
+        <div className="bg-gray-100 shadow-lg rounded-2xl p-6 text-center">
           <h2 className="text-xl font-bold mb-4 text-black">会費</h2>
           <span className="font-bold text-lg text-black">{membershipFee.name}：{membershipFee.price}</span>
         </div>
