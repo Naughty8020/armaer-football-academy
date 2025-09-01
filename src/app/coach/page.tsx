@@ -10,6 +10,16 @@ interface Member {
 
 const members: Member[] = [
   { 
+    name: "Jose Lara", 
+    role: "スクール統括顧問アンバサダー", 
+    image: "/members/member0.jpeg", 
+    career: `【経歴】
+レアル・マドリード　U８～U１２　カンテラ　監督
+ジェフユナイテッド千葉　育成統括ダイレクター
+レアル・マドリード女子1軍監督`, 
+    message: "スペインで行われている当たり前の育成メソッドを日本の選手達に伝えていきます。また日本でトップクラブの育成に数年関わり、日本の選手達の特徴や良い部分、伸びしろを熟知している観点から日本選手向けに構成したメソッドを学ぶことで、世界で通用する、活躍できると信じています。また、サッカー選手の前に人としての理念のところは非常に重要となります。この理念の部分がしっかりしていれば、サッカー選手また人として成長し続けられます。​さらなる、日本サッカーの発展のために力を尽くしますのでよろしくお願いします。" 
+  },
+  { 
     name: "谷　誠志朗", 
     role: "代表", 
     image: "/members/member1.jpg", 
@@ -89,16 +99,15 @@ export default function MemberPage() {
                   className="object-cover"
                 />
               </div>
-              <div className="p-6 flex flex-col items-center text-center space-y-3">
-                <h3 className="text-lg sm:text-xl text-black font-semibold">{member.name}</h3>
-                <p className="text-sm sm:text-base text-gray-600">{member.role}</p>
-                <p
-                  className="text-xs sm:text-sm text-gray-500 leading-relaxed whitespace-pre-line"
-                >
-                  {member.career}
-                </p>
-                <p className="text-gray-700 text-sm sm:text-base italic leading-relaxed">“{member.message}”</p>
-              </div>
+              <div className="p-6 flex flex-col items-center text-center space-y-3 h-72">
+  <div className="overflow-y-auto">
+    <h3 className="text-lg sm:text-xl text-black font-semibold">{member.name}</h3>
+    <p className="text-sm sm:text-base text-gray-600">{member.role}</p>
+    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed whitespace-pre-line">{member.career}</p>
+    <p className="text-gray-700 text-sm sm:text-base italic leading-relaxed">“{member.message}”</p>
+  </div>
+</div>
+
             </div>
           ))}
         </div>
