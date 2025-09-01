@@ -145,13 +145,22 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-200">
               <div className="space-y-2 py-6">
-              <Link href="/" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
-                  HOME
-                </Link>
-                <Link href="/about" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+              <Link
+  href="/"
+  onClick={() => setMobileMenuOpen(false)}
+  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white"
+>
+  HOME
+</Link>
+
+                <Link href="/about"
+                  onClick={() => setMobileMenuOpen(false)}
+                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   ABOUT
                 </Link>
-                <Link href="/training" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/training" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   TREANING・PRICE
                 </Link>
                 <Disclosure as="div" className="-mx-3">
@@ -160,27 +169,33 @@ export default function Header() {
                     <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none group-data-[open]:rotate-180" />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-  {/* スマホでもプログラムタイトルを表示 */}
-  {programItems.map((item, index) => (
-    <div
-      key={index}
+  {programItems.map((item) => (
+    <Link
+      key={item.id}
+      href={`/programs/${item.id}`}
+      onClick={() => setMobileMenuOpen(false)}
       className="block rounded-lg py-2 px-3 text-sm font-medium text-black hover:bg-gray-200"
     >
       {item.title}
-    </div>
+    </Link>
   ))}
-
-
 </DisclosurePanel>
 
+
                 </Disclosure>
-                <Link href="/contact" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/contact" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                  
                   CONTACT
                 </Link>
-                <Link href="/achievement" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/achievement"  onClick={() => setMobileMenuOpen(false)}
+                 className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   ACHIEVEMENT
                 </Link>
-                <Link href="/coach" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
+                <Link href="/coach" 
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-black hover:bg-gray-900 hover:text-white">
                   COACH
                 </Link>
               </div>
