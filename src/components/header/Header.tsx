@@ -82,7 +82,8 @@ export default function Header() {
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 text-gray-500" />
             </PopoverButton>
 
-            <PopoverPanel className="absolute left-1/2 z-10 mt-3 w-screen max-w-lg -translate-x-1/2 overflow-hidden rounded-3xl bg-white text-black shadow-lg border-2 border-black">
+            <PopoverPanel className="absolute left-1/2 z-50 mt-3 w-screen max-w-lg -translate-x-1/2 overflow-hidden rounded-3xl bg-white text-black shadow-lg border-2 border-black">
+
   <div className="mx-3 my-4">
     <div className="grid grid-cols-1 gap-2 p-4">
     {programItems.map((item) => (
