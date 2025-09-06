@@ -13,7 +13,7 @@ export default function LineSection() {
           {/* ボタンエリア */}
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="https://lin.ee/xxxxxx" // ジュニア公式LINEのURL
+              href="https://line.me/R/ti/p/@204fbyia" // ジュニア公式LINEのURL
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl bg-green-500 px-6 py-3 text-white font-semibold shadow hover:bg-green-600 transition"
@@ -22,7 +22,7 @@ export default function LineSection() {
             </a>
   
             <a
-              href="https://lin.ee/yyyyyy" // Jr.ユース公式LINEのURL
+              href="https://line.me/R/ti/p/@387brwjo" // Jr.ユース公式LINEのURL
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-2xl bg-green-500 px-6 py-3 text-white font-semibold shadow hover:bg-green-600 transition"
