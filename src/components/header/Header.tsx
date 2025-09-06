@@ -127,7 +127,7 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm text-black">
           <div className="flex items-center justify-between">
-            <TeamIcon className="h-15 w-30 sm:h-40 sm:w-100 cursor-pointer" />
+            <TeamIcon className="h-10 w-33 sm:h-40 sm:w-100 cursor-pointer" />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
