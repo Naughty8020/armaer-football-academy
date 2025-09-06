@@ -1,38 +1,40 @@
-// src/app/training/[id]/page.tsx
+// src/app/program/[id]/page.tsx
 import { notFound } from "next/navigation";
 import { TrainingItem } from "@/lib/training";
 
-async function fetchTraining(id: string): Promise<TrainingItem | null> {
+async function fetchProgram(id: string): Promise<TrainingItem | null> {
   const res = await fetch(
     `https://armaer-football.microcms.io/api/v1/training/${id}`,
     {
       headers: { "X-API-KEY": process.env.MICROCMS_API_KEY ?? "" },
-      cache: "no-store",
+      cache: "no-store", // SSR で最新データ取得
     }
   );
-
   if (!res.ok) return null;
   return res.json();
 }
-
-export default async function TrainingDetailPage({
-  params,
-}: {
-  params: { id: string }; // ✅ Promiseではなく普通のオブジェクト
-}) {
-  const { id } = params;
-  const training = await fetchTraining(id);
-
-  if (!training) notFound();
-
-  return (
-    <div className="max-w-3xl mx-auto px-4 py-8 text-black space-y-8">
-      <h1 className="mt-20 text-2xl font-bold">{training.title}</h1>
-      <p>曜日: {training.day}</p>
-      <p>時間: {training.time}</p>
-      <p>対象: {training.target}</p>
-      {training.location && <p>場所: {training.location}</p>}
-      {training.school && <p>スクール: {training.school}</p>}
-    </div>
-  );
-}
+interface ProgramPageProps {
+    params: Promise<{ id: string }>;
+  }
+  
+  export default async function ProgramPage({ params }: ProgramPageProps) {
+    const { id } = await params; // ← await 必須
+    const program = await fetchProgram(id);
+  
+    if (!program) notFound();
+  
+    return (
+      <div className="max-w-3xl mx-auto px-4 py-8 text-black space-y-6">
+        <h1 className="mt-20 text-3xl font-bold">{program.title}</h1>
+  
+        <div className="space-y-2">
+          <p><strong>曜日:</strong> {program.day}</p>
+          <p><strong>時間:</strong> {program.time}</p>
+          <p><strong>場所:</strong> {program.location}</p>
+          <p><strong>対象:</strong> {program.target}</p>
+          <p><strong>ID:</strong> {program.id}</p>
+        </div>
+      </div>
+    );
+  }
+  
