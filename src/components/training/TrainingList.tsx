@@ -1,4 +1,3 @@
-// components/TrainingList.tsx
 "use client";
 import { useState } from "react";
 import Link from "next/link";
@@ -47,7 +46,10 @@ export default function TrainingList({ classes }: TrainingListProps) {
         {filteredClasses.map((c) => (
           <Link key={c.id} href={`/training/${c.id}`} className="group">
             <article
-              className="rounded-2xl bg-gray-100 p-5 shadow-sm ring-1 ring-gray-300 transition-transform transform hover:scale-105 hover:ring-pink-400 cursor-pointer"
+              tabIndex={0} // フォーカス可能にする
+              className="rounded-2xl bg-gray-100 p-5 shadow-sm ring-1 ring-gray-300
+                         transition-transform transform hover:scale-105 hover:ring-pink-400
+                         focus:scale-105 focus:ring-pink-400 active:scale-105 cursor-pointer"
             >
               <div className="flex items-center justify-between gap-3">
                 <Pill>{c.day}</Pill>
