@@ -32,7 +32,7 @@ interface ProgramPageProps {
           <p><strong>時間:</strong> {program.time}</p>
           <p><strong>場所:</strong> {program.location}</p>
           <p><strong>対象:</strong> {program.target}</p>
-          <p><strong>ID:</strong> {program.id}</p>
+   
         </div>
       </div>
     );

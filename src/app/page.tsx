@@ -8,8 +8,7 @@ import LineSection from "@/components/contact/LineSection";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-fixed bg-cover bg-center"
-         style={{ backgroundImage: "url('/background.jpg')" }}>
+  
       <div>
         <MainSection />
         <AboutSection />
@@ -18,6 +17,6 @@ export default function Home() {
         <LineSection />
         <BlogSection />
       </div>
-    </div>
+   
   );
 }
