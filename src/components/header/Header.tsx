@@ -48,7 +48,8 @@ export default function Header() {
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         {/* ロゴ */}
   
-  <TeamIcon className="h-20 w-70 cursor-pointer" />
+        <TeamIcon className="h-10 w-33 sm:h-30 sm:w-70 cursor-pointer" />
+
 
 
 
@@ -77,42 +78,56 @@ export default function Header() {
           </Link>
 
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-black">
-              PROGRAM
-              <ChevronDownIcon aria-hidden="true" className="h-5 w-5 text-gray-500" />
-            </PopoverButton>
+  <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold text-black">
+    PROGRAM
+    <ChevronDownIcon aria-hidden="true" className="h-5 w-5 text-gray-500" />
+  </PopoverButton>
 
-            <PopoverPanel className="absolute left-1/2 z-50 mt-3 w-screen max-w-lg -translate-x-1/2 overflow-hidden rounded-3xl bg-white text-black shadow-lg border-2 border-black">
-
-  <div className="mx-3 my-4">
-    <div className="grid grid-cols-1 gap-2 p-4">
-    {programItems.map((item) => (
-  <Link
-    key={item.id}
-    href={`/programs/${item.id}`} // プログラムの詳細ページへのリンク
-    className="block p-3 border border-gray-300 rounded-lg text-center text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
+  <PopoverPanel className="absolute left-1/2 z-50 mt-3 w-screen max-w-lg -translate-x-1/2 overflow-hidden rounded-3xl bg-white text-black shadow-lg border-2 border-black">
+    
+  <div className="flex justify-end p-3">
+  <Popover.Button
+    as="button"
+    className="flex items-center justify-center w-8 h-8 rounded border border-gray-300 text-gray-700 hover:text-black hover:border-black transition-all duration-200"
+    aria-label="閉じる"
   >
-    {item.title}
-  </Link>
-))}
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </Popover.Button>
+</div>
+
+
+
+    <div className="mx-3 my-4">
+      <div className="grid grid-cols-1 gap-2 p-4">
+        {programItems.map((item) => (
+          <Link
+            key={item.id}
+            href={`/programs/${item.id}`}
+            className="block p-3 border border-gray-300 rounded-lg text-center text-sm font-medium text-gray-900 hover:bg-gray-50 transition"
+          >
+            {item.title}
+          </Link>
+        ))}
+      </div>
     </div>
-  </div>
 
-  <div className="grid grid-cols-2 divide-x divide-gray-200 bg-gray-100">
-    {callsToAction.map((item) => (
-      <Link
-        key={item.name}
-        href={item.href}
-        className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold text-black hover:bg-gray-200"
-      >
-        <item.icon aria-hidden="true" className="h-5 w-5 text-black" />
-        {item.name}
-      </Link>
-    ))}
-  </div>
-</PopoverPanel>
+    <div className="grid grid-cols-2 divide-x divide-gray-200 bg-gray-100">
+      {callsToAction.map((item) => (
+        <Link
+          key={item.name}
+          href={item.href}
+          className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold text-black hover:bg-gray-200"
+        >
+          <item.icon aria-hidden="true" className="h-5 w-5 text-black" />
+          {item.name}
+        </Link>
+      ))}
+    </div>
+  </PopoverPanel>
+</Popover>
 
-          </Popover>
 
           <Link href="/contact" className="text-sm font-semibold text-black hover:text-gray-700">
             CONTACT
@@ -131,8 +146,7 @@ export default function Header() {
         <div className="fixed inset-0 z-50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm text-black">
           <div className="flex items-center justify-between">
-            <TeamIcon className="h-10 w-10" />
-
+          <TeamIcon className="h-15 w-30 sm:h-40 sm:w-100 cursor-pointer" />
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
