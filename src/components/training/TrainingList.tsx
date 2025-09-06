@@ -1,6 +1,7 @@
 // components/TrainingList.tsx
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import { TrainingItem } from "@/lib/training";
 
 interface TrainingListProps {
@@ -31,7 +32,7 @@ export default function TrainingList({ classes }: TrainingListProps) {
   }
 
   return (
-<div className="max-w-5xl mx-auto px-4 pb-20">
+    <div className="max-w-5xl mx-auto px-4 pb-20">
       <div className="mb-6">
         <input
           type="text"
@@ -44,18 +45,21 @@ export default function TrainingList({ classes }: TrainingListProps) {
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {filteredClasses.map((c) => (
-          <article
-            key={c.id}
-            className="rounded-2xl bg-gray-100 p-5 shadow-sm ring-1 ring-gray-300"
-          >
-            <div className="flex items-center justify-between gap-3">
-              <Pill>{c.day}</Pill>
-              {c.location && <span className="text-xs text-gray-700">{c.location}</span>}
-            </div>
-            <h3 className="mt-2 text-lg font-semibold leading-snug">{c.title}</h3>
-            <p className="mt-1 text-sm text-gray-700">時間：{c.time}</p>
-            <p className="mt-1 text-sm text-gray-700">対象：{c.target}</p>
-          </article>
+          <Link key={c.id} href={`/training/${c.id}`} className="group">
+            <article
+              className="rounded-2xl bg-gray-100 p-5 shadow-sm ring-1 ring-gray-300 transition-transform transform hover:scale-105 hover:ring-pink-400 cursor-pointer"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <Pill>{c.day}</Pill>
+                {c.location && <span className="text-xs text-gray-700">{c.location}</span>}
+              </div>
+              <h3 className="mt-2 text-lg font-semibold leading-snug group-hover:text-pink-500 transition-colors">
+                {c.title}
+              </h3>
+              <p className="mt-1 text-sm text-gray-700">時間：{c.time}</p>
+              <p className="mt-1 text-sm text-gray-700">対象：{c.target}</p>
+            </article>
+          </Link>
         ))}
 
         {filteredClasses.length === 0 && (
