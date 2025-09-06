@@ -1,4 +1,6 @@
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import Button from "../ui/Button"
+
 
 export default function FormSection() {
   return (
@@ -99,13 +101,11 @@ export default function FormSection() {
           </label>
         </div>
 
-        <button
-          type="submit"
-          className="sm:col-span-2 mt-4 w-full rounded-md bg-gradient-to-r from-pink-400 to-purple-500 px-3 py-2 text-white font-semibold hover:opacity-90"
-        >
-          お問い合わせを送信
-        </button>
+      <Button type="submit"  className="sm:col-span-2 mt-4 w-full rounded-md bg-[rgb(241,84,84)] hover:bg-[rgb(164,88,88)] transition inline-block px-3 py-2 text-white font-semibold hover:opacity-90">
+        お問い合わせを送信
+</Button>
       </form>
     </div>
   );
 }
+
