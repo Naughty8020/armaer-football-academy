@@ -6,6 +6,14 @@ export interface TrainingItem {
     time: string;
     target: string;
     location?: string;
-    school?: string; // ここを追加
+    school?: string;
+  
+    // 追加フィールド
+    img?: {
+      url: string; // microCMS 画像URL
+      height?: number;
+      width?: number;
+    };
+    map?: string; // microCMSのリッチエディタで保存したiframe HTML
   }
   

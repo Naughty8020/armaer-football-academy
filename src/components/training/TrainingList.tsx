@@ -53,7 +53,7 @@ export default function TrainingList({ classes }: TrainingListProps) {
                 <Pill>{c.day}</Pill>
                 {c.location && <span className="text-xs text-gray-700">{c.location}</span>}
               </div>
-              <h3 className="mt-2 text-lg font-semibold leading-snug group-hover:text-pink-500 transition-colors">
+              <h3 className="mt-2 text-gray-900 text-lg font-semibold leading-snug transition-colors">
                 {c.title}
               </h3>
               <p className="mt-1 text-sm text-gray-700">時間：{c.time}</p>
