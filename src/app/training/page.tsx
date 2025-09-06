@@ -1,5 +1,5 @@
-import TrainingAndPricing from "@/components/training/TrainingAndPricing";
+import TrainingSection from "@/components/training/TrainingSection";
 
 export default function Page() {
-  return <TrainingAndPricing />;
+  return <TrainingSection />;
 }

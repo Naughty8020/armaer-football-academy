@@ -1,4 +1,4 @@
-// components/NewsSectionClient.tsx
+
 "use client";
 import { useState, useEffect } from "react";
 import { NewsItem } from "@/lib/news";
@@ -8,7 +8,7 @@ interface Props {
   initialNews: NewsItem[];
 }
 
-export default function NewsSectionClient({ initialNews }: Props) {
+export default function NewsList({ initialNews }: Props) {
   const [visibleItems, setVisibleItems] = useState(3);
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [isMobile, setIsMobile] = useState(false);
