@@ -53,10 +53,10 @@ export default function TrainingList({ classes }: TrainingListProps) {
             >
               <div className="flex items-center justify-between gap-3">
                 <Pill>{c.day}</Pill>
-                {c.location && <span className="text-xs text-gray-700">{c.location}</span>}
+                {c.location && <span className="text-xs text-gray-700">{c.title}</span>}
               </div>
               <h3 className="mt-2 text-gray-900 text-lg font-semibold leading-snug transition-colors">
-                {c.title}
+                {c.location}
               </h3>
               <p className="mt-1 text-sm text-gray-700">時間：{c.time}</p>
               <p className="mt-1 text-sm text-gray-700">対象：{c.target}</p>
