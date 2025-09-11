@@ -61,6 +61,7 @@ export default function TrainingList({ classes }: TrainingListProps) {
               </h3>
               <p className="mt-1 text-sm text-gray-700">時間：{c.time}</p>
               <p className="mt-1 text-sm text-gray-700">対象：{c.target}</p>
+              <p className="mt-1 text-sm text-blue-400">詳しくはクリック</p>
             </article>
           </Link>
         ))}
