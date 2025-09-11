@@ -72,7 +72,7 @@ export default function AboutPage() {
             {/* Card 1 */}
             <div className="bg-blue-100 shadow-md rounded-lg p-6 flex flex-col items-center text-center">
               <i className="fas fa-user-friends text-black text-3xl mb-4"></i>
-              <h3 className="text-black text-2xl font-semibold mb-2">
+              <h3 className="text-black text-2xl font-semibold pt-0 mb-2">
                 人間性
               </h3>
               <p className="text-gray-800 text-base">
@@ -92,7 +92,7 @@ export default function AboutPage() {
             {/* Card 2 */}
             <div className="bg-red-100 shadow-md rounded-lg p-6 flex flex-col items-center text-center">
               <i className="fas fa-futbol text-black text-3xl mb-4"></i>
-              <h3 className="text-black text-2xl font-semibold mb-2">
+              <h3 className="text-black text-2xl font-semibold pt-0 mb-2 ">
                 スキル
               </h3>
               <p className="text-gray-800 text-base">
