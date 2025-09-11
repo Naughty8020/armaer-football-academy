@@ -13,8 +13,7 @@ export default function BlogSection() {
 
         {/* 説明文 */}
         <p className="text-sm sm:text-base lg:text-lg text-gray-700 mb-8 leading-relaxed">
-          練習の様子や試合のレポート、コーチからのメッセージなどを発信中。<br />
-          サッカースクールの日常や最新情報をブログでチェックしよう！
+           abema blog 更新中！
         </p>
 
         {/* ボタン */}
