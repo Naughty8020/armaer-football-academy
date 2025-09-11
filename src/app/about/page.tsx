@@ -16,10 +16,10 @@ export default function AboutPage() {
   
               そんな子ども達が持つ可能性を引き出すべく
   
-              子ども達一人一人が<br/>
+              子ども達一人一人が
               サッカーに本気で向き合い
   
-              ピッチで戦うための武器と将来の夢を明確に<br />
+              ピッチで戦うための武器と将来の夢を明確に
   
               持つ事の出来る選手の育成を目指します。
             </p>
@@ -42,7 +42,7 @@ export default function AboutPage() {
             ABOUT US
           </h2>
           <p className="text-lg sm:text-xl font-medium text-gray-800">
-            ARMAはスペイン語で”武器”という意味です。
+            ARMAはスペイン語で”武器”という意味です。<br/>
   
             これは子ども達それぞれの武器を持って
   

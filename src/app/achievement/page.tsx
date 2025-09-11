@@ -96,8 +96,8 @@ export default function AchievementsPage() {
             選手輩出実績・帯同実績
           </h1>
           <p className="mt-4 text-gray-800">
-            私たちはこれらで学んだことに満足していません。もっと多くのチームやリーグ、国から学び続け、
-            日本から世界へと視野を広げ、選手の未来の選択肢を増やします。
+            私たちはこれらで学んだことに満足することはありません。<br/>もっと多くのチームやリーグ、国から学び続け、
+            日本から世界へと視野を広げ、<br/>選手の未来の選択肢を増やします。
           </p>
         </motion.div>
 
@@ -158,7 +158,7 @@ export default function AchievementsPage() {
         <div className="mx-auto mt-12 w-full max-w-7xl rounded-2xl bg-gray-100 p-6 text-black">
           <h4 className="text-lg font-semibold">さらに学び、さらに前へ</h4>
           <p className="mt-2 text-sm">
-            私たちは現状に満足せず、より多くの国・リーグ・文化から学び続けます。選手それぞれの可能性を最大化し、
+            私たちは現状に満足せず<br/>より多くの国・リーグ・文化から学び続けます。選手それぞれの可能性を最大化し、
             世界で戦える力を育みます。
           </p>
         </div>

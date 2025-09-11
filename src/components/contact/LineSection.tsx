@@ -7,7 +7,7 @@ export default function LineSection() {
             お問い合わせ
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            ジュニア・Jr.ユースへのお問い合わせは公式LINEからお願いいたします。
+            ジュニア・Jr.ユースへのお問い合わせは<br/>公式LINEからお願いいたします。
           </p>
   
           {/* ボタンエリア */}

@@ -7,7 +7,7 @@ export default function FormSection() {
     <div className="relative bg-white px-6 py-12 sm:py-16 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl">その他お問い合わせ</h2>
-        <p className="mt-2 text-lg text-gray-600">公式LINEからでもお問い合わせが可能です</p>
+        <p className="mt-2 text-md text-gray-600">公式LINEからでもお問い合わせが可能です</p>
       </div>
 
       <form className="mx-auto mt-16 max-w-xl grid gap-6 sm:grid-cols-2">
