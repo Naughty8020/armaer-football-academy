@@ -3,17 +3,29 @@ import { notFound } from "next/navigation";
 import { ProgramsItem } from "@/lib/programs";
 
 
-
 async function fetchProgram(id: string): Promise<ProgramsItem | null> {
-  const res = await fetch(
-    `https://armaer-football.microcms.io/api/v1/programs/${id}`,
-    {
-      headers: { "X-API-KEY": process.env.MICROCMS_API_KEY ?? "" },
-      cache: "no-store",
+  try {
+    const res = await fetch(
+      `https://armaer-football.microcms.io/api/v1/programs/${id}`,
+      {
+        headers: {
+          "X-API-KEY": process.env.MICROCMS_API_KEY ?? "",
+        },
+        cache: "no-store",
+      }
+    );
+
+    if (!res.ok) {
+      console.error(`Failed to fetch program ${id}: ${res.statusText}`);
+      return null;
     }
-  );
-  if (!res.ok) return null;
-  return res.json();
+
+    const data = await res.json();
+    return data as ProgramsItem;
+  } catch (error) {
+    console.error("Error fetching program:", error);
+    return null;
+  }
 }
 
 
