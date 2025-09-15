@@ -9,7 +9,7 @@ type AchievementItem = {
 
 
 async function fetchAchievement(): Promise<AchievementItem[]> {
-  const res = await fetch("https://armaer-football.microcms.io/api/v1/achievement", {
+  const res = await fetch("https://armaer-football.microcms.io/api/v1/achievement?limit=100", {
     headers: { "X-API-KEY": process.env.MICROCMS_API_KEY ?? "" },
     cache: "no-store", // 常に最新取得
   });

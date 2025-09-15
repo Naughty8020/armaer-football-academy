@@ -52,7 +52,7 @@ export default function AchievementsClient({ items }: { items: AchievementItem[]
     const set = new Set(items.map((i) => i.country));
     return Array.from(set);
   }, [items]);
-
+  
   return (
     <div className="min-h-screen bg-white text-black">
       <Head>
