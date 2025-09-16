@@ -5,7 +5,7 @@ import FomeSection from '@/components/contact/FomeSection'
 export default function Example() {
   return (
     <>
-    <LineSection />   
+  <LineSection bgColor="bg-white" textColor="text-black" subColor="text-gray-900" />
     <FomeSection />
     </>
 
