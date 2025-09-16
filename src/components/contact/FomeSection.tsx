@@ -1,17 +1,48 @@
-import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import Button from "../ui/Button"
+"use client";
 
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import Button from "../ui/Button";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
+const container:Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      staggerChildren: 0.15,
+      when: "beforeChildren",
+    },
+  },
+};
+
+const item:Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
+  },
+};
 
 export default function FormSection() {
   return (
-    <div className="relative bg-white px-6 py-12 sm:py-16 lg:px-8">
-      <div className="mx-auto max-w-2xl text-center">
+    <motion.div
+      className="relative bg-white px-6 py-12 sm:py-16 lg:px-8"
+      initial="hidden"
+      animate="show"
+      variants={container}
+    >
+      <motion.div variants={item} className="mx-auto max-w-2xl text-center">
         <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl">その他お問い合わせ</h2>
         <p className="mt-2 text-md text-gray-600">公式LINEからでもお問い合わせが可能です</p>
-      </div>
+      </motion.div>
 
-      <form className="mx-auto mt-16 max-w-xl grid gap-6 sm:grid-cols-2">
-        <div>
+      <motion.form
+        variants={container}
+        className="mx-auto mt-16 max-w-xl grid gap-6 sm:grid-cols-2"
+      >
+        <motion.div variants={item}>
           <label htmlFor="first-name" className="block text-sm font-semibold text-gray-700">
             姓
           </label>
@@ -22,9 +53,9 @@ export default function FormSection() {
             autoComplete="given-name"
             className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring focus:ring-indigo-200"
           />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div variants={item}>
           <label htmlFor="last-name" className="block text-sm font-semibold text-gray-700">
             名
           </label>
@@ -35,9 +66,9 @@ export default function FormSection() {
             autoComplete="family-name"
             className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring focus:ring-indigo-200"
           />
-        </div>
+        </motion.div>
 
-        <div className="sm:col-span-2">
+        <motion.div variants={item} className="sm:col-span-2">
           <label htmlFor="email" className="block text-sm font-semibold text-gray-700">
             メールアドレス
           </label>
@@ -48,9 +79,9 @@ export default function FormSection() {
             autoComplete="email"
             className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring focus:ring-indigo-200"
           />
-        </div>
+        </motion.div>
 
-        <div className="sm:col-span-2">
+        <motion.div variants={item} className="sm:col-span-2">
           <label htmlFor="phone-number" className="block text-sm font-semibold text-gray-700">
             電話番号
           </label>
@@ -71,9 +102,9 @@ export default function FormSection() {
               className="flex-1 rounded-r-md border-l border-gray-300 px-3 py-2 text-gray-900 focus:outline-none"
             />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="sm:col-span-2">
+        <motion.div variants={item} className="sm:col-span-2">
           <label htmlFor="message" className="block text-sm font-semibold text-gray-700">
             メッセージ
           </label>
@@ -83,9 +114,9 @@ export default function FormSection() {
             rows={4}
             className="mt-2 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-indigo-500 focus:ring focus:ring-indigo-200"
           />
-        </div>
+        </motion.div>
 
-        <div className="sm:col-span-2 flex items-center gap-2">
+        <motion.div variants={item} className="sm:col-span-2 flex items-center gap-2">
           <input
             id="agree-to-policies"
             name="agree-to-policies"
@@ -99,13 +130,17 @@ export default function FormSection() {
             </a>
             .
           </label>
-        </div>
+        </motion.div>
 
-      <Button type="submit"  className="sm:col-span-2 mt-4 w-full rounded-md bg-[rgb(241,84,84)] hover:bg-[rgb(164,88,88)] transition inline-block px-3 py-2 text-white font-semibold hover:opacity-90">
-        お問い合わせを送信
-</Button>
-      </form>
-    </div>
+        <motion.div variants={item} className="sm:col-span-2">
+          <Button
+            type="submit"
+            className="mt-4 w-full rounded-md bg-[rgb(241,84,84)] hover:bg-[rgb(164,88,88)] transition inline-block px-3 py-2 text-white font-semibold hover:opacity-90"
+          >
+            お問い合わせを送信
+          </Button>
+        </motion.div>
+      </motion.form>
+    </motion.div>
   );
 }
-
