@@ -2,14 +2,14 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
+import type { Variants } from "framer-motion";
 interface LineSectionProps {
   bgColor?: string;     // 背景色クラス（例: "bg-black"）
   textColor?: string;   // テキスト色クラス（例: "text-white"）
   subColor?: string;  
 }
 
-const containerVariants = {
+const container:Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -19,14 +19,14 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const item:Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0, 0, 0.2, 1] as any,
+      ease: [0, 0, 0.2, 1] 
 
     },
   },
@@ -47,21 +47,21 @@ export default function LineSection({
       className={`${bgColor} py-24 sm:py-32`}
     >
       <motion.div
-        variants={containerVariants}
+        variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
         className={`max-w-4xl mx-auto px-6 lg:px-8 text-center ${textColor}`}
       >
         {/* タイトル */}
         <motion.h2
-          variants={itemVariants}
+          variants={item}
           className="text-3xl font-bold tracking-tight sm:text-4xl"
         >
           お問い合わせ
         </motion.h2>
 
         <motion.p
-          variants={itemVariants}
+          variants={item}
           className={`mt-4 text-lg ${subColor}`}
         >
           ジュニア・Jr.ユースへのお問い合わせは
@@ -71,7 +71,7 @@ export default function LineSection({
 
         {/* ボタンエリア */}
         <motion.div
-          variants={itemVariants}
+          variants={item}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <a

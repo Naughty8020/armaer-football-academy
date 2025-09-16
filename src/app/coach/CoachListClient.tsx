@@ -3,21 +3,21 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import type { Member } from "@/lib/typs";
-
+import type { Variants } from "framer-motion";
 interface Props {
   coaches: Member[];
 }
 
-const containerVariants = {
+const container:Variants = {
   hidden: {},
   show: {
     transition: { staggerChildren: 0.15 },
   },
 };
 
-const cardVariants = {
+const card:Variants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6,  ease: [0, 0, 0.2, 1] as any,} },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6,  ease: [0, 0, 0.2, 1]} },
 };
 
 export default function CoachListClient({ coaches }: Props) {
@@ -27,7 +27,7 @@ export default function CoachListClient({ coaches }: Props) {
   return (
     <motion.section
       ref={ref}
-      variants={containerVariants}
+      variants={container}
       initial="hidden"
       animate={isInView ? "show" : "hidden"}
       className="py-16 bg-white"
@@ -39,7 +39,7 @@ export default function CoachListClient({ coaches }: Props) {
           {coaches.map((coach, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
+              variants={card}
               className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center text-center"
             >
               {coach.img && (

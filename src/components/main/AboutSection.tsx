@@ -3,9 +3,10 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import type { Variants } from "framer-motion";
 
 // アニメーション定義
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -15,7 +16,7 @@ const container = {
   },
 };
 
-import type { Variants } from "framer-motion";
+
 
 const item: Variants = {
   hidden: { opacity: 0, y: 30 },

@@ -3,12 +3,12 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { NewsItem } from "@/lib/news";
 import CustomButton from "@/components/ui/Button";
-
+import type { Variants } from "framer-motion";
 interface Props {
   initialNews: NewsItem[];
 }
 
-const containerVariants = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -16,14 +16,14 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const contents: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0, 0, 0.2, 1] as any,
+      ease: [0, 0, 0.2, 1] 
 
     },
   },
@@ -63,13 +63,13 @@ export default function NewsList({ initialNews }: Props) {
       className="bg-white mb-5 py-16"
     >
       <motion.div
-        variants={containerVariants}
+        variants={container}
         initial="hidden"
         animate={isInView ? "show" : "hidden"}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <motion.h2
-          variants={itemVariants}
+          variants={contents}
           className="text-3xl font-bold text-gray-900 mb-8"
         >
           Latest News
@@ -83,7 +83,7 @@ export default function NewsList({ initialNews }: Props) {
             return (
               <motion.div
                 key={item.id}
-                variants={itemVariants}
+                variants={contents}
                 className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded shadow hover:bg-gray-100 transition flex-col border border-gray-600"
               >
                 <div className="flex gap-3 sm:gap-4">
