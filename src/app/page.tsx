@@ -1,3 +1,10 @@
+import MainSection from "@/components/main/MainSection";
+import NewsSection from "@/components/news/NewsSection"; // サーバーコンポーネント
+import AboutSection from "@/components/main/AboutSection";
+import BlogSection from "@/components/main/BlogSection";
+import ContactSection from "@/components/main/SubContactSection";
+import LineSection from "@/components/main/maincontact/LineSection";
+
 export const metadata = {
   title: "ARMAER FOOTBALL ACADEMY",
   description:
@@ -10,7 +17,7 @@ export const metadata = {
     siteName: "ARMAER FOOTBALL ACADEMY",
     images: [
       {
-        url: "https://armaer-football-academy.vercel.app/ogp.jpg", // 公開用OGP画像（置いてあれば）
+        url: "https://armaer-football-academy.vercel.app/ogp.jpg", // 適切な画像をアップロードしてこのURLに置き換えてください
         width: 1200,
         height: 630,
         alt: "ARMAER FOOTBALL ACADEMY",
@@ -23,7 +30,20 @@ export const metadata = {
     title: "ARMAER FOOTBALL ACADEMY",
     description:
       "滋賀県近江八幡市のサッカースクール。世界と戦える選手の育成を目指す。",
-    images: ["https://armaer-football-academy.vercel.app/ogp.jpg"],
+    images: ["https://armaer-football-academy.vercel.app/ogp.jpg"], // 同上
   },
   metadataBase: new URL("https://armaer-football-academy.vercel.app"),
 };
+
+export default function Home() {
+  return (
+    <div>
+      <MainSection />
+      <AboutSection />
+      <ContactSection />
+      <NewsSection />
+      <LineSection />
+      <BlogSection />
+    </div>
+  );
+}
