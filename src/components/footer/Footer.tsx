@@ -6,7 +6,7 @@ import SnsIcons from "../ui/SnsIcons";
 
 
 
-export default function Home() {
+export default function  FooterPage() {
     return (
      <>
      <footer className="bg-gray-50 pt-28">
@@ -16,7 +16,7 @@ export default function Home() {
   <SnsIcons />
     </div>
 <FooterMain />
-
+ FooterPage
 <p className="text-xs text-gray-500">
   &copy; {new Date().getFullYear()} ARMAER-FOOTBALL-ACADEMY. All rights reserved.
 </p>
