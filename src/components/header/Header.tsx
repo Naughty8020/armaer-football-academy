@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   Dialog,
   DialogPanel,
@@ -13,33 +13,35 @@ import {
   PopoverButton,
   PopoverGroup,
   PopoverPanel,
-} from '@headlessui/react'
+} from '@headlessui/react';
 import {
   Bars3Icon,
   XMarkIcon,
-} from '@heroicons/react/24/outline'
-import { ChevronDownIcon, CurrencyYenIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/react/20/solid'
-import TeamIcon from '../ui/TeamIcon'
-import { usePrograms } from '../main/HeaderSection'
+} from '@heroicons/react/24/outline';
+import { ChevronDownIcon, CurrencyYenIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/react/20/solid';
+import TeamIcon from '../ui/TeamIcon';
+import type { ProgramsItem } from '@/lib/programs';
+
+interface HeaderProps {
+  programs: ProgramsItem[];
+}
 
 const callsToAction = [
   { name: '料金一覧', href: '/training', icon: CurrencyYenIcon },
   { name: 'お申し込み', href: '/contact', icon: ChatBubbleBottomCenterTextIcon },
-]
+];
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { programs } = usePrograms()
+export default function Header({ programs }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
   const programItems = programs.map((program) => ({
     title: program.title,
     id: program.id,
-  }))
+  }));
 
-  const pathname = usePathname()
-
-  // リンク用の関数：現在ページは赤、ホバーで濃く
   const linkClass = (href: string, baseClass = 'text-sm font-semibold') =>
-    `${baseClass} ${pathname === href ? 'text-red-500 hover:text-red-600' : 'text-black hover:text-gray-400'} transition-colors`
+    `${baseClass} ${pathname === href ? 'text-red-500 hover:text-red-600' : 'text-black hover:text-gray-400'} transition-colors`;
 
   return (
     <header className="bg-gray-50">
@@ -184,5 +186,5 @@ export default function Header() {
         </DialogPanel>
       </Dialog>
     </header>
-  )
+  );
 }

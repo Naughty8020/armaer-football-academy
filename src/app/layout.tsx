@@ -1,5 +1,5 @@
 // app/layout.tsx
-import Header from '@/components/header/Header';
+import Headerpage from '@/components/main/HeaderSection';
 import Footer from '@/components/footer/Footer';
 import './globals.css';
 
@@ -9,7 +9,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body >
 
-     <Header />
+     <Headerpage />
         <main className='bg-white' >{children}</main>
        <Footer />
       </body>

@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@heroicons/react/16/solid'
-import LineSection from '@/components/contact/LineSection'
+import LineSection from '@/components/main/maincontact/LineSection'
 import { LuLamp } from 'react-icons/lu'
-import FomeSection from '@/components/contact/FomeSection'
+import FomeSection from '@/components/main/maincontact/FomeSection'
 export default function Example() {
   return (
     <>

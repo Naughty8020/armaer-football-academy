@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
-import Button from "../ui/Button";
+import Button from "../../ui/Button";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 const container:Variants = {
