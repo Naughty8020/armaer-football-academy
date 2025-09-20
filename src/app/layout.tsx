@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Armaer Football Academy',
     description: 'サッカー選手の技術向上を目指すトップレベルのサッカーアカデミーです。',
-    url: 'https://armaer-football-academy.vercel.app',
+    url: 'https://armaerfootball.com',
     images: [
       {
-        url: 'https://armaer-football-academy.vercel.app/images/og-image.jpg',
+        url: 'https://armaerfootball.com/images/og-image.jpg',
         width: 800,
         height: 600,
         alt: 'Armaer Football Academy',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Armaer Football Academy',
     description: 'サッカー選手を育成する最高のアカデミー',
-    images: ['https://armaer-football-academy.vercel.app/images/og-image.jpg'],
+    images: ['https://armaerfootball.com/images/og-image.jpg'],
   },
   icons: {
     icon: '/favicon.ico',
