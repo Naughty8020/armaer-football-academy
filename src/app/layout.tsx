@@ -6,25 +6,25 @@ import { Metadata } from 'next';
 import Head from 'next/head'; // Headコンポーネントをインポート
 
 export const metadata: Metadata = {
-  title: 'Armaer Football Academy|アルマーフットボールアカデミー',
+  title: 'Armaer Football Academy | サッカー技術向上を目指すアカデミー',
   description:
-    '滋賀県近江八幡市のARMAER FOOTBALL ACADEMYで、サッカー技術、フィジカル、戦術理解、メンタルをトレーニングし、夢を実現する選手を育成します。',
+    '滋賀県近江八幡市に位置するARMAER FOOTBALL ACADEMYで、サッカー技術、フィジカル、戦術理解、メンタルをトレーニングし、夢を実現する選手を育成します。ジュニアからプロ選手へのステップアップをサポートします。',
   keywords: 'サッカー, アカデミー, トレーニング, 滋賀, サッカースクール, 世界基準, ジュニアサッカー',
   authors: [{ name: 'Armaer Football Academy' }],
   openGraph: {
-    title: 'Armaer Football Academy',
+    title: 'Armaer Football Academy | サッカー技術向上を目指すアカデミー',
     description:
-      '滋賀県の近江八幡市のサッカースクール、世界基準のトレーニングを受けながらサッカー技術を高めよう。',
+      '滋賀県の近江八幡市にある世界基準のサッカースクールで、技術や戦術理解を深め、次世代のサッカー選手を育成します。',
     url: 'https://armaerfootball.com',
     images: [
       {
-        url: 'https://armaerfootball.com/images/og-image.jpg',
+        url: 'https://armaerfootball.com/public/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Armaer Football Academy - サッカーアカデミー',
+        alt: 'Armaer Football Academy - サッカーアカデミーのイメージ',
       },
     ],
-    siteName: 'Armaer Football Academy', // 修正: site_name → siteName
+    siteName: 'Armaer Football Academy',
     locale: 'ja_JP',
   },
   twitter: {
@@ -37,7 +37,6 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',
   },
 };
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja">
