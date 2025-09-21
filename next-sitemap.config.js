@@ -7,8 +7,7 @@ module.exports = {
     priority: 0.7, // 全体的な優先度（適宜変更）
     exclude: ['/excluded-page'], // 除外するページがあれば追加
     additionalSitemaps: [
-      // 他のsitemapがあれば追加
-      'https://armaerfootball.com/some-other-sitemap.xml',
+        // 他のsitemapがあれば追加
+        'https://armaerfootball.com/some-other-sitemap.xml',
     ],
-  }
-  
+}
