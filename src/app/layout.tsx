@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import Head from 'next/head'; // Headコンポーネントをインポート
 
 export const metadata: Metadata = {
-  title: 'Armaer Football Academy | サッカー技術向上を目指すアカデミー',
+  title: 'Armaer Football Academy|アルマーフットボールアカデミー',
   description:
     '滋賀県近江八幡市のARMAER FOOTBALL ACADEMYで、サッカー技術、フィジカル、戦術理解、メンタルをトレーニングし、夢を実現する選手を育成します。',
   keywords: 'サッカー, アカデミー, トレーニング, 滋賀, サッカースクール, 世界基準, ジュニアサッカー',
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Armaer Football Academy',
     description:
-      '滋賀県のトップサッカーアカデミーで、世界基準のトレーニングを受けながらサッカー技術を高めよう。',
+      '滋賀県の近江八幡市のサッカースクール、世界基準のトレーニングを受けながらサッカー技術を高めよう。',
     url: 'https://armaerfootball.com',
     images: [
       {
