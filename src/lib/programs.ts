@@ -44,6 +44,8 @@ export type ProgramsItem = {
   image7?: ImageType;
   link7?: string;
 
+  othertitle?: string;
+  otherdetail?: string;
   other?: string;
   id: string;
 };

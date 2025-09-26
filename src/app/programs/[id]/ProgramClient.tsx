@@ -216,35 +216,48 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
       )}
 
       {/* other セクション */}
-      {program.other && (
-        <FadeInSection>
-          <div className="flex flex-col items-center space-y-4">
-            {(() => {
-              const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
-              const matches = [...program.other.matchAll(regex)];
-              if (matches.length === 0) {
-                return (
-                  <div
-                    className="prose max-w-none"
-                    dangerouslySetInnerHTML={{ __html: program.other }}
-                  />
-                );
-              }
-              return matches.map((match, idx) => (
-                <a
-                  key={idx}
-                  href={match[1]}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 transition"
-                >
-                  {match[2]}
-                </a>
-              ));
-            })()}
-          </div>
-        </FadeInSection>
+  {/* other セクション */}
+{program.other && (
+  <FadeInSection>
+    <div className="flex flex-col items-center space-y-4 text-center max-w-4xl w-full px-4">
+      {/* othertitle と otherdetail */}
+      {program.othertitle && (
+        <h2 className="text-2xl font-semibold">{program.othertitle}</h2>
       )}
+      {program.otherdetail && (
+        <p className="whitespace-pre-line">{program.otherdetail}</p>
+      )}
+
+      {/* 既存の other 内容 */}
+      {(() => {
+        const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+        const matches = [...program.other.matchAll(regex)];
+        if (matches.length === 0) {
+          return (
+            <div
+              className="prose max-w-full"
+              dangerouslySetInnerHTML={{ __html: program.other }}
+            />
+          );
+        }
+        return matches.map((match, idx) => (
+          <a
+            key={idx}
+            href={match[1]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 transition"
+          >
+            {match[2]}
+          </a>
+        ));
+      })()}
+    </div>
+  </FadeInSection>
+)}
+
+
+
     </div>
   );
 }
