@@ -22,7 +22,7 @@ export default function MainSection() {
   }, [])
 
   return (
-    <main className="relative bg-gray-800">
+    <main className="relative bg-black">
     <div className="relative h-[90vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] w-full overflow-hidden">
       {/* 画像群 */}
       {images.map((src, index) => (

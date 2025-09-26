@@ -1,5 +1,5 @@
 // app/layout.tsx
-import Headerpage from '@/components/main/HeaderSection';
+import Headerpage from '@/components/header/HeaderSection';
 import Footer from '@/components/footer/Footer';
 import './globals.css';
 import { Metadata } from 'next';

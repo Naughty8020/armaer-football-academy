@@ -31,11 +31,10 @@ const item:Variants = {
     },
   },
 };
-
 export default function LineSection({
-  bgColor = "bg-gray-800",
+  bgColor = "bg-black",
   textColor = "text-white",
-  subColor = "text-gray-200",
+  subColor = "text-gray-300",
 }: LineSectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -75,19 +74,19 @@ export default function LineSection({
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <a
-            href="https://line.me/R/ti/p/@204fbyia" // ジュニア公式LINEのURL
+            href="https://line.me/R/ti/p/@204fbyia"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-2xl bg-green-500 px-6 py-3 text-white font-semibold shadow hover:bg-green-600 transition"
+            className="rounded-2xl bg-green-600 px-6 py-3 text-white font-semibold shadow hover:bg-green-700 transition"
           >
             公式LINE ジュニア
           </a>
 
           <a
-            href="https://line.me/R/ti/p/@387brwjo" // Jr.ユース公式LINEのURL
+            href="https://line.me/R/ti/p/@387brwjo"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-2xl bg-green-500 px-6 py-3 text-white font-semibold shadow hover:bg-green-600 transition"
+            className="rounded-2xl bg-green-600 px-6 py-3 text-white font-semibold shadow hover:bg-green-700 transition"
           >
             公式LINE Jr.ユース
           </a>
