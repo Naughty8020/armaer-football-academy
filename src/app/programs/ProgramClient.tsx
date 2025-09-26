@@ -2,7 +2,7 @@
 import { FaFutbol, FaRunning, FaShieldAlt } from "react-icons/fa";
 import React from "react";
 import type { ProgramsItem } from "@/lib/programs";
-
+import Link from "next/link";
 interface Props {
   programs: ProgramsItem[];
 }
@@ -63,23 +63,26 @@ export default function ProgramClient({ programs }: Props) {
   })}
 </div>
     {/* APIのプログラムリスト */}
-    <div className="mt-10 space-y-4">
-      <h4 className="text-xl font-semibold mb-3">プログラム一覧</h4>
-      {programs && programs.length > 0 ? (
-        <div className="space-y-4">
-          {programs.map((program) => (
-            <div
-              key={program.id}
-              className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow"
-            >
-              {program.title ?? "タイトルなし"}
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="text-gray-500">プログラムが見つかりませんでした。</p>
-      )}
+   
+{/* APIのプログラムリスト */}
+<div className="mt-10 space-y-4">
+  <h4 className="text-xl font-semibold mb-3">プログラム一覧</h4>
+  {programs && programs.length > 0 ? (
+    <div className="space-y-4">
+      {programs.map((program) => (
+        <Link
+          key={program.id}
+          href={`/programs/${program.id}`} // ここでIDページへリンク
+          className="block bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow"
+        >
+          {program.title ?? "タイトルなし"}
+        </Link>
+      ))}
     </div>
+  ) : (
+    <p className="text-gray-500">プログラムが見つかりませんでした。</p>
+  )}
+</div>
   </section>
   
   );
