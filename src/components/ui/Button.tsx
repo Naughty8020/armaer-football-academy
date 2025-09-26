@@ -4,15 +4,22 @@ import React from 'react';
 
 interface ButtonProps {
   children: React.ReactNode;
-  href?: string;                   // 遷移先URLは任意
-  onClick?: () => void;            // クリックイベントも任意
+  href?: string;                   
+  onClick?: () => void;            
   className?: string;
-  type?: "button" | "submit" | "reset"; // buttonのtype属性
+  type?: "button" | "submit" | "reset"; 
+  disabled?: boolean; // ← 追加！
 }
 
-const CustomButton: React.FC<ButtonProps> = ({ children, href, onClick, className, type = "button" }) => {
+const CustomButton: React.FC<ButtonProps> = ({
+  children,
+  href,
+  onClick,
+  className,
+  type = "button",
+  disabled = false, // ← デフォルトfalse
+}) => {
   if (href) {
-    // hrefがある場合はリンクとして動作
     return (
       <Link href={href} className={className}>
         {children}
@@ -20,9 +27,13 @@ const CustomButton: React.FC<ButtonProps> = ({ children, href, onClick, classNam
     );
   }
 
-  // hrefがない場合はボタンとして動作
   return (
-    <button type={type} onClick={onClick} className={className}>
+    <button
+      type={type}
+      onClick={onClick}
+      className={className}
+      disabled={disabled} // ← ここで反映
+    >
       {children}
     </button>
   );
