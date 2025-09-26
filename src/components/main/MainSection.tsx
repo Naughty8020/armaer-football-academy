@@ -8,7 +8,7 @@ const images = [
   "/main-img/main1.jpeg",
   "/main-img/main2.jpg",
   "/main-img/main3.jpeg",
-  "/main-img/main4.jpg",
+  "/main-img/main4.jpg"
 ]
 
 export default function MainSection() {
