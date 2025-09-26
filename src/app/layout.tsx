@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 import Head from 'next/head'; // Headコンポーネントをインポート
 
 export const metadata: Metadata = {
-  title: 'Armaer Football Academy | サッカー技術向上を目指すアカデミー',
+  title: 'Armaer Football Academy | 滋賀県近江八幡市で活動しているサッカースクール',
   description:
     '滋賀県近江八幡市に位置するARMAER FOOTBALL ACADEMYで、サッカー技術、フィジカル、戦術理解、メンタルをトレーニングし、夢を実現する選手を育成します。ジュニアからプロ選手へのステップアップをサポートします。',
   keywords: 'サッカー, アルマー,近江八幡,滋賀県,スペイン,アルマ,アルマフットボール,アルマフットボールアカデミー トレーニング,少年サッカー, サッカースクール, 世界基準, ジュニアサッカー',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: 'https://armaerfootball.com/public/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Armaer Football Academy - サッカーアカデミーのイメージ',
+        alt: 'Armaer Football Academy - サッカースクールのイメージ',
       },
     ],
     siteName: 'Armaer Football Academy',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Armaer Football Academy | サッカー技術向上を目指すアカデミー',
-    description: '世界基準のサッカー選手育成プログラムを提供するアカデミー。',
+    title: 'Armaer Football Academy | 滋賀県近江八幡市で活動しているサッカースクール',
+    description: '世界基準のサッカー選手育成プログラムを提供するサッカースクール。',
     images: ['https://armaerfootball.com/images/og-image.jpg'],
   },
   icons: {
