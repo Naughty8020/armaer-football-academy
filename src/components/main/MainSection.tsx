@@ -5,9 +5,10 @@ import { useEffect, useState } from "react"
 import Button from "../ui/Button"
 
 const images = [
-  "/unsplash/adria-crehuet-cano-zideC_21IyY-unsplash.jpg",
-  "/unsplash/bhong-bahala-t4S4LOUuXEE-unsplash.jpg",
-  "/unsplash/bhong-bahala-x7sYc_bEq38-unsplash.jpg",
+  "/main-img/main1.jpeg",
+  "/main-img/main2.jpg",
+  "/main-img/main3.jpeg",
+  "/main-img/main4.jpg",
 ]
 
 export default function MainSection() {

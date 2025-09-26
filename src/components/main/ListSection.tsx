@@ -123,16 +123,16 @@ const defaultItems: CardItem[] = [
   },
   {
     id: 2,
-    title: "プログラム一覧",
+    title: "トレーニングコース紹介",
     imageSrc: "/team2.jpeg",
     imageAlt: "サンプルBの説明",
-    href: "/sample-b",
+    href: "/training",
   },
   {
     id: 3,
     title: "コーチ紹介",
     imageSrc: "/coaches.jpeg",
     imageAlt: "サンプルCの説明",
-    href: "/sample-c",
+    href: "/coach",
   },
 ];
