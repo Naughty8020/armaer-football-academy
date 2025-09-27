@@ -174,46 +174,56 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
           </div>
         </FadeInSection>
       )}
-
-      {/* title5〜title7 カード化 */}
-      {(program.title5 || program.title6 || program.title7) && (
-        <FadeInSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
-            {[5,6,7].map((i) => {
-              const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
-              const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
-              const image = program[`image${i}` as keyof ProgramsItem] as { url: string, width?: number, height?: number } | undefined;
-              const link = linksMap[`link${i}` as keyof typeof linksMap];
-              if (!title) return null;
-              return (
-                <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-                  {image && (
-                    <img
-                      src={image.url}
-                      alt={title}
-                      className="w-full h-48 object-cover rounded-t-lg"
-                    />
-                  )}
-                  <div className="p-4 flex flex-col">
-                    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                    <p className="text-sm whitespace-pre-line">{detail}</p>
-                    {link && (
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-4 bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center"
-                      >
-                        {link.text}
-                      </a>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </FadeInSection>
+{/* title5〜title7 カード化 */}
+{(program.title5 || program.title6 || program.title7) && (
+  <FadeInSection>
+    <div className="max-w-6xl w-full mx-auto">
+      {/* listtitle を表示 */}
+      {program.listtitle && (
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          {program.listtitle}
+        </h2>
       )}
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[5, 6, 7].map((i) => {
+          const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
+          const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
+          const image = program[`image${i}` as keyof ProgramsItem] as { url: string; width?: number; height?: number } | undefined;
+          const link = linksMap[`link${i}` as keyof typeof linksMap];
+
+          if (!title) return null;
+          return (
+            <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+              {image && (
+                <img
+                  src={image.url}
+                  alt={title}
+                  className="w-full h-48 object-cover rounded-t-lg"
+                />
+              )}
+              <div className="p-4 flex flex-col">
+                <h3 className="text-lg font-semibold mb-2">{title}</h3>
+                <p className="text-sm whitespace-pre-line">{detail}</p>
+                {link && (
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center"
+                  >
+                    {link.text}
+                  </a>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </FadeInSection>
+)}
+
 
       {/* other セクション */}
   {/* other セクション */}

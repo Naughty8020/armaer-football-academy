@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { NewsItem } from "@/lib/news";
 import CustomButton from "@/components/ui/Button";
 import type { Variants } from "framer-motion";
+
 interface Props {
   initialNews: NewsItem[];
 }
@@ -21,18 +22,15 @@ const contents: Variants = {
   show: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: [0, 0, 0.2, 1] 
-
-    },
+    transition: { duration: 0.6, ease: [0, 0, 0.2, 1] },
   },
 };
 
 export default function NewsList({ initialNews }: Props) {
-  const [visibleItems, setVisibleItems] = useState(3);
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [isMobile, setIsMobile] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 3;
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -54,14 +52,15 @@ export default function NewsList({ initialNews }: Props) {
     });
   };
 
-  const loadMore = () => setVisibleItems((prev) => prev + 3);
   const maxLength = isMobile ? 50 : 150;
 
+  // ページごとのデータ
+  const totalPages = Math.ceil(initialNews.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = initialNews.slice(startIndex, startIndex + itemsPerPage);
+
   return (
-    <section
-      ref={ref}
-      className="bg-white mb-5 py-16"
-    >
+    <section ref={ref} className="bg-white mb-5 py-16">
       <motion.div
         variants={container}
         initial="hidden"
@@ -76,7 +75,7 @@ export default function NewsList({ initialNews }: Props) {
         </motion.h2>
 
         <div className="flex flex-col gap-3 sm:gap-6">
-          {initialNews.slice(0, visibleItems).map((item) => {
+          {currentItems.map((item) => {
             const isExpanded = expandedIds.has(item.id);
             const isLong = item.contents.length > maxLength;
 
@@ -119,16 +118,22 @@ export default function NewsList({ initialNews }: Props) {
           })}
         </div>
 
-        {visibleItems < initialNews.length && (
-          <div className="text-center mt-8">
-            <CustomButton
-              onClick={loadMore}
-              className="bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:bg-[rgb(164,88,88)] transition inline-flex items-center gap-2"
+        {/* ページネーション */}
+        <div className="flex justify-center mt-8 gap-2">
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <button
+              key={page}
+              onClick={() => setCurrentPage(page)}
+              className={`px-3 py-1 rounded ${
+                page === currentPage
+                  ? "bg-[rgb(241,84,84)] text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+              }`}
             >
-              さらに3件表示
-            </CustomButton>
-          </div>
-        )}
+              {page}
+            </button>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

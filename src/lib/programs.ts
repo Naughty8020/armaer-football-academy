@@ -29,6 +29,8 @@ export type ProgramsItem = {
   image4?: ImageType;
   link4?: string;
 
+  listtitle?: string;
+
   title5?: string;
   detail5?: string;
   image5?: ImageType;
