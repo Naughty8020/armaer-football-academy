@@ -62,13 +62,13 @@ export default function MainSection() {
           サッカーのピッチで自分だけの武器を身に着け
           明確な夢を持てる選手の育成
         </p>
-
         <Button
-          href="/training"
-          className="bg-[rgb(241,84,84)] text-white px-4 py-2 max-w-58 rounded hover:bg-[rgb(164,88,88)] transition inline-block"
-        >
-          プログラム＆料金一覧へ
-        </Button>
+  href="/training"
+  className="bg-[rgb(241,84,84)] text-white px-6 py-3 rounded hover:bg-[rgb(164,88,88)] transition inline-flex items-center justify-center"
+>
+  プログラム＆料金一覧へ
+</Button>
+
       </section>
     </main>
   )
