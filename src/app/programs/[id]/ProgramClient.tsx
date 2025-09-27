@@ -224,9 +224,9 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
   </FadeInSection>
 )}
 
+<FromSection title="お申し込み" />
 
 
-<FromSection />
 
 {/* 
   
