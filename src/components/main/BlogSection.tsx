@@ -62,14 +62,16 @@ export default function BlogSection() {
 
         {/* ボタン */}
         <motion.div variants={item} className="inline-block">
-          <Button
-            href="/contact"
-            className="bg-[rgb(241,84,84)] text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-[rgb(164,88,88)] transition inline-flex items-center gap-2 w-full sm:w-auto justify-center shadow"
-          >
-            <SlNote className="text-lg sm:text-xl" />
-            公式ブログを見る
-          </Button>
-        </motion.div>
+  <Button
+    href="https://ameblo.jp/seishiro1126/"
+
+ 
+    className="bg-[rgb(241,84,84)] text-white text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:bg-[rgb(164,88,88)] transition inline-flex items-center gap-2 w-full sm:w-auto justify-center shadow"
+  >
+    <SlNote className="text-lg sm:text-xl" />
+    公式ブログを見る
+  </Button>
+</motion.div>
       </motion.div>
     </section>
   );
