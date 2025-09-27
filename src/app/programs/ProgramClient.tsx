@@ -27,6 +27,8 @@ export default function ProgramClient({ programs }: Props) {
           ARMAERでは通常のトレーニングに加え
           選手が成長するのに必要な力を伸ばすため
           様々なプログラムを行っています。
+          ARMAERのコーチは全員が学生であり、現役選手として活躍するコーチや 専門学生、国際大会帯同経験を持つコーチなどで構成されています。
+世界との差を知るコーチ陣が、サッカーのリアルを伝えていきます。
         </p>
       </div>
     </div>
@@ -35,8 +37,10 @@ export default function ProgramClient({ programs }: Props) {
     <div className="mt-12">
       <h3 className="text-2xl font-semibold mb-3">About</h3>
       <p className="leading-relaxed">
-        このセクションではサービスの詳細説明や理念、機能の要約などを書きます。
-        文章は読みやすさを優先して段落を分け、強調したい箇所は太字やカラーブロックで示すと良いでしょう。
+      ARMAER のスクール顧問アンバサダーは現レアルマドリード女子トップチーム ホセララ氏であり、世界トップの前線で活躍する指導者のメソッドの元 世界最高基準のトレーニングを実施しております。
+サッカー選手の成長に必要な
+技術 / フィジカル / 戦術理解 / メンタル
+をトレーニングの中で落とし込んでいきます。
       </p>
     </div>
   
@@ -45,7 +49,7 @@ export default function ProgramClient({ programs }: Props) {
 
     <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
   {[
-    { title: "世界基準", body: "ARMAER のスクール顧問アンバサダーは現レアルマドリード女子トップチーム ホセララ氏であり、世界トップの前線で活躍する指導者のメソッドの元 世界最高基準のトレーニングを実施しております。", icon: FaFutbol },
+    { title: "世界基準", body: "世界トップの前線で活躍する指導者のメソッドの元 世界最高基準のトレーニングを実施しております。", icon: FaFutbol },
     { title: "トップレベル", body: " サッカー選手を支えている４つの柱｛ 技術 / フィジカル / 戦術理解 / メンタル を軸にトレーニングを行っていきます。", icon: FaRunning },
     { title: "様々なコース", body: "サッカー選手の成長に必要な技術 / フィジカル / 戦術理解 / メンタルをトレーニングの中で落とし込んでいきます。", icon: FaShieldAlt },
   ].map((c) => {
