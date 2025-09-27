@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: 'サッカー, アルマー,近江八幡,滋賀県,スペイン,アルマ,アルマフットボール,アルマフットボールアカデミー トレーニング,少年サッカー, サッカースクール, 世界基準, ジュニアサッカー',
   authors: [{ name: 'Armaer Football Academy' }],
   openGraph: {
-    title: 'Armaer Football Academy | サッカー技術向上を目指すアカデミー',
+    title: 'Armaer Football Academy | 滋賀県近江八幡市で活動しているサッカースクール',
     description:
       '滋賀県の近江八幡市にある世界基準のサッカースクールで、技術や戦術理解を深め、次世代のサッカー選手を育成します。',
     url: 'https://armaerfootball.com',
