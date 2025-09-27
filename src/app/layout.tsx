@@ -3,7 +3,7 @@ import Headerpage from '@/components/header/HeaderSection';
 import Footer from '@/components/footer/Footer';
 import './globals.css';
 import { Metadata } from 'next';
-import Head from 'next/head'; // Headコンポーネントをインポート
+import Head from 'next/head'; 
 
 export const metadata: Metadata = {
   title: 'Armaer Football Academy | 滋賀県近江八幡市で活動しているサッカースクール',
@@ -44,8 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Headerpage />
         <main className="bg-white">{children}</main>
         <Footer />
-        
-        {/* Headコンポーネント内でjsonLdを追加 */}
+     
         <Head>
           <script
             type="application/ld+json"

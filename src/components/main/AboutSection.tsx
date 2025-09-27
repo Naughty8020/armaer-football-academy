@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import type { Variants } from "framer-motion";
 
-// アニメーション定義
+
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -37,14 +37,14 @@ export default function AboutSection() {
   return (
     <section className="bg-white mt-8 sm:mt-16 lg:mt-20 mb-6 sm:mb-12 py-8 sm:py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* アニメーションラッパー */}
+      
         <motion.div
           ref={ref}
           variants={container}
           initial="hidden"
           animate={isInView ? "show" : "hidden"}
         >
-          {/* 見出し */}
+     
           <motion.h2
             variants={item}
             className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6 sm:mb-8 leading-relaxed text-center"
@@ -52,10 +52,10 @@ export default function AboutSection() {
             サッカーのピッチで自分だけの武器を身に着け明確な夢を持てる選手の育成
           </motion.h2>
 
-          {/* レイアウト: モバイルは縦並び, PCは横並び */}
+        
           <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-stretch">
             
-            {/* テキスト部分 */}
+      
             <motion.div
               className="flex-1 bg-white flex flex-col justify-center"
               variants={container}
@@ -91,8 +91,7 @@ export default function AboutSection() {
               </motion.div>
             </motion.div>
 
-            {/* 画像部分（アニメーションなし） */}
-      {/* 画像部分（アニメーションあり） */}
+
 <motion.div
   variants={item}
   className="flex-1"

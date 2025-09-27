@@ -2,7 +2,7 @@ import MainSection from "@/components/main/MainSection";
 import AboutSection from "@/components/main/AboutSection";
 import ListSection from "@/components/main/ListSection";
 import ContactSection from "@/components/main/SubContactSection";
-import NewsSection from "@/components/news/NewsSection"; // サーバーコンポーネント
+import NewsSection from "@/components/news/NewsSection";
 import LineSection from "@/components/main/maincontact/LineSection"
 import BlogSection from "@/components/main/BlogSection";
 

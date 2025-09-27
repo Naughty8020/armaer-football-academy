@@ -39,7 +39,7 @@ export default function FormSection({ title = "お問い合わせ" }: Props) {
       setStatus("success");
       formRef.current.reset();
     } catch (err) {
-      console.error(err);
+     
       setStatus("error");
     }
   };
@@ -78,7 +78,7 @@ export default function FormSection({ title = "お問い合わせ" }: Props) {
           />
         </motion.div>
 
-        {/* 名 */}
+  
         <motion.div variants={item}>
           <label htmlFor="last-name" className="block text-sm font-semibold text-gray-700">名</label>
           <input
@@ -102,7 +102,7 @@ export default function FormSection({ title = "お問い合わせ" }: Props) {
           />
         </motion.div>
 
-        {/* 電話番号 */}
+     
         <motion.div variants={item} className="sm:col-span-2">
           <label htmlFor="phone" className="block text-sm font-semibold text-gray-700">電話番号</label>
           <input

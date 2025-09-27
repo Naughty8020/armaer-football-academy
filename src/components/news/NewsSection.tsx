@@ -5,7 +5,7 @@ async function fetchNews(): Promise<NewsItem[] | null> {
   try {
     const res = await fetch("https://armaer-football.microcms.io/api/v1/news", {
       headers: { "X-API-KEY": process.env.MICROCMS_API_KEY ?? "" },
-      cache: "no-store", // 常に最新データ取得
+      cache: "no-store", 
     });
 
     if (!res.ok) return null;
@@ -13,7 +13,7 @@ async function fetchNews(): Promise<NewsItem[] | null> {
     const data = await res.json();
     return data.contents as NewsItem[];
   } catch (error) {
-    console.error("Failed to fetch news:", error);
+
     return null;
   }
 }

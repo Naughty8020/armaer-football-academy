@@ -53,7 +53,7 @@ export default function Pricing() {
 
   return (
     <div ref={ref} className="max-w-5xl mx-auto px-4 py-12 space-y-12 text-black">
-      {/* 料金一覧セクション */}
+     
       <motion.section
         variants={container}
         initial="hidden"
@@ -87,7 +87,7 @@ export default function Pricing() {
         </div>
       </motion.section>
 
-      {/* 会費セクション */}
+   
       <motion.section
         variants={item}
         initial="hidden"

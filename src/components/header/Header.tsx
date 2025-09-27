@@ -48,7 +48,7 @@ export default function Header({ programs }: HeaderProps) {
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <TeamIcon className="h-10 w-33 sm:h-30 sm:w-70 cursor-pointer" />
 
-        {/* モバイルボタン */}
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -60,7 +60,7 @@ export default function Header({ programs }: HeaderProps) {
           </button>
         </div>
 
-        {/* PCメニュー */}
+     
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Link href="/" className={linkClass('/')}>HOME</Link>
           <Link href="/about" className={linkClass('/about')}>ABOUT</Link>
@@ -160,7 +160,7 @@ export default function Header({ programs }: HeaderProps) {
                   </Link>
                 ))}
 
-                {/* モバイルのプログラムメニュー */}
+              
                 <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold text-white hover:bg-gray-700 hover:text-white transition-colors">
                     PROGRAM

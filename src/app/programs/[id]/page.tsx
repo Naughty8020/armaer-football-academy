@@ -18,7 +18,7 @@ async function fetchProgram(id: string): Promise<ProgramsItem | null> {
 export default async function ProgramPage(props: {
   params: Promise<{ id: string }>;
 }) {
-  const { id } = await props.params; // ← await で取り出す
+  const { id } = await props.params; 
   const program = await fetchProgram(id);
 
   if (!program) notFound();

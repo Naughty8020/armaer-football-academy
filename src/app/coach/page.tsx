@@ -10,7 +10,7 @@ async function fetchCoaches(): Promise<Member[] | null> {
   try {
     const res = await fetch("https://armaer-football.microcms.io/api/v1/coach", {
       headers: { "X-API-KEY": process.env.MICROCMS_API_KEY ?? "" },
-      cache: "no-store", // 常に最新データ取得
+      cache: "no-store", 
     });
 
     if (!res.ok) return null;
@@ -18,7 +18,7 @@ async function fetchCoaches(): Promise<Member[] | null> {
     const data = await res.json();
     return data.contents as Member[];
   } catch (error) {
-    console.error("Failed to fetch coaches:", error);
+  
     return null;
   }
 }

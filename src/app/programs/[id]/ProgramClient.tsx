@@ -14,7 +14,7 @@ const item: Variants = {
   },
 };
 
-// セクションコンポーネント（再利用用）
+
 function FadeInSection({ children }: { children: React.ReactNode }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -25,7 +25,7 @@ function FadeInSection({ children }: { children: React.ReactNode }) {
       variants={item}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
-      className="my-12" // セクション間のスペース
+      className="my-12" 
     >
       {children}
     </motion.section>
@@ -33,7 +33,7 @@ function FadeInSection({ children }: { children: React.ReactNode }) {
 }
 
 export default function ProgramClient({ program }: { program: ProgramsItem }) {
-  // リンク抽出関数
+
   function extractLink(html?: string) {
     if (!html) return null;
     const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/i;
@@ -88,7 +88,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
         </FadeInSection>
       )}
 
-      {/* title2 */}
+
       {program.title2 && (
         <FadeInSection>
           <div className="flex flex-col items-center text-center">
@@ -117,7 +117,6 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
         </FadeInSection>
       )}
 
-      {/* title3 */}
       {program.title3 && (
         <FadeInSection>
           <div className="flex flex-col items-center text-center">
@@ -146,7 +145,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
         </FadeInSection>
       )}
 
-      {/* title4 */}
+    
       {program.title4 && (
         <FadeInSection>
           <div className="flex flex-col items-center text-center">
@@ -174,11 +173,11 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
           </div>
         </FadeInSection>
       )}
-{/* title5〜title7 カード化 */}
+
 {(program.title5 || program.title6 || program.title7) && (
   <FadeInSection>
     <div className="max-w-6xl w-full mx-auto">
-      {/* listtitle を表示 */}
+
       {program.listtitle && (
         <h2 className="text-2xl font-bold mb-6 text-center">
           {program.listtitle}

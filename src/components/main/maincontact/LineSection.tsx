@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import type { Variants } from "framer-motion";
 interface LineSectionProps {
-  bgColor?: string;     // 背景色クラス（例: "bg-black"）
-  textColor?: string;   // テキスト色クラス（例: "text-white"）
+  bgColor?: string;    
+  textColor?: string;   
   subColor?: string;  
 }
 
@@ -51,7 +51,7 @@ export default function LineSection({
         animate={isInView ? "show" : "hidden"}
         className={`max-w-4xl mx-auto px-6 lg:px-8 text-center ${textColor}`}
       >
-        {/* タイトル */}
+     
         <motion.h2
           variants={item}
           className="text-3xl font-bold tracking-tight sm:text-4xl"
@@ -68,7 +68,7 @@ export default function LineSection({
           公式LINEからお願いいたします。
         </motion.p>
 
-        {/* ボタンエリア */}
+     
         <motion.div
           variants={item}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6"

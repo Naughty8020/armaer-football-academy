@@ -2,10 +2,10 @@ import Link from 'next/link';
 
 export default function FooterMain() {
   return (
-    <div className="border-t border-gray-700 pt-8 lg:pt-16"> {/* 薄めの境界線 */}
+    <div className="border-t border-gray-700 pt-8 lg:pt-16"> 
       <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-        {/* Training */}
+   
         <div>
           <p className="font-medium text-white text-sm sm:text-base">training</p>
           <ul className="mt-4 space-y-2 text-xs sm:text-sm">
@@ -27,7 +27,6 @@ export default function FooterMain() {
           </ul>
         </div>
 
-        {/* About Team */}
         <div>
           <p className="font-medium text-white text-sm sm:text-base">about team</p>
           <ul className="mt-4 space-y-2 text-xs sm:text-sm">
@@ -44,7 +43,6 @@ export default function FooterMain() {
           </ul>
         </div>
 
-        {/* Contact */}
         <div>
           <p className="font-medium text-white text-sm sm:text-base">contact</p>
           <ul className="mt-4 space-y-2 text-xs sm:text-sm">
@@ -61,7 +59,7 @@ export default function FooterMain() {
           </ul>
         </div>
 
-        {/* Legal */}
+ 
         <div>
           <p className="font-medium text-white text-sm sm:text-base">legal</p>
           <ul className="mt-4 space-y-2 text-xs sm:text-sm">

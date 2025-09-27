@@ -18,7 +18,7 @@ interface ProgramPageProps {
   params: Promise<{ id: string }>;
 }
 
-// HTMLタグから href 属性のURLだけ抜き出す関数
+
 function extractMapUrl(html: string): string {
   const match = html.match(/href="([^"]+)"/);
   return match ? match[1] : "#";
@@ -50,7 +50,7 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
         <p><strong>対象:</strong> {program.target}</p>
       </div>
 
-      {/* Google Mapボタン */}
+ 
       {program.map && (
         <div className="mt-4">
           <a

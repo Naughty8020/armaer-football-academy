@@ -31,7 +31,7 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero Section */}
+    
       <motion.section
         id="home"
         ref={refHero}
@@ -62,7 +62,7 @@ export default function AboutPage() {
         </motion.div>
       </motion.section>
 
-      {/* About Us Section */}
+
       <motion.section
         id="about"
         ref={refAbout}
@@ -86,7 +86,7 @@ export default function AboutPage() {
         </motion.p>
       </motion.section>
 
-      {/* Services Section */}
+   
       <motion.section
         id="services"
         ref={refServices}
@@ -131,7 +131,7 @@ export default function AboutPage() {
         </div>
       </motion.section>
 
-      {/* Soccer School Section */}
+
       <motion.section
         ref={refSoccerSchool}
         variants={container}

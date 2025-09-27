@@ -4,12 +4,12 @@ import { useState, useRef } from "react";
 import Link from "next/link";
 import { TrainingItem } from "@/lib/training";
 import { motion, useInView } from "framer-motion";
-import type { Variants } from "framer-motion"; // ← これを追加
+import type { Variants } from "framer-motion"; 
 interface TrainingListProps {
   classes: TrainingItem[];
 }
 
-// アニメーションの定義
+
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -59,7 +59,7 @@ export default function TrainingList({ classes }: TrainingListProps) {
 
   return (
     <section ref={ref} className="max-w-5xl mx-auto px-4 pb-20">
-      {/* 検索バーのアニメーション追加 */}
+
       <motion.div
         variants={item}
         initial="hidden"
@@ -75,7 +75,6 @@ export default function TrainingList({ classes }: TrainingListProps) {
         />
       </motion.div>
 
-      {/* リスト全体にアニメーション */}
       <motion.div
         variants={container}
         initial="hidden"

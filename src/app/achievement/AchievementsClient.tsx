@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import Head from "next/head";
 
-// 正しい型定義（category は string[]）
+
 export type AchievementItem = {
   title: string;
   note?: string;
   country: string;
-  category: string[]; // ← 修正
+  category: string[]; 
 };
 
 function Pill({ children }: { children: React.ReactNode }) {

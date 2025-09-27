@@ -8,7 +8,7 @@ async function fetchTraining(): Promise<TrainingItem[] | null> {
   try {
     const res = await fetch("https://armaer-football.microcms.io/api/v1/training", {
       headers: { "X-API-KEY": process.env.MICROCMS_API_KEY ?? "" },
-      cache: "no-store", // 常に最新のデータを取得
+      cache: "no-store", 
     });
 
     if (!res.ok) return null;
@@ -16,7 +16,7 @@ async function fetchTraining(): Promise<TrainingItem[] | null> {
     const data = await res.json();
     return data.contents as TrainingItem[];
   } catch (error) {
-    console.error("Failed to fetch training data:", error);
+   
     return null;
   }
 }

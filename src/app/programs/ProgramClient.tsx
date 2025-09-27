@@ -10,7 +10,7 @@ interface Props {
 export default function ProgramClient({ programs }: Props) {
   return (
     <section className="max-w-6xl mx-auto p-6 sm:p-10 text-black">
-    {/* 上段: 左画像 右テキスト */}
+
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
       <div>
         <img
@@ -62,9 +62,9 @@ export default function ProgramClient({ programs }: Props) {
     );
   })}
 </div>
-    {/* APIのプログラムリスト */}
    
-{/* APIのプログラムリスト */}
+   
+
 <div className="mt-10 space-y-4">
   <h4 className="text-xl font-semibold mb-3">プログラム一覧</h4>
   {programs && programs.length > 0 ? (
@@ -72,7 +72,7 @@ export default function ProgramClient({ programs }: Props) {
       {programs.map((program) => (
         <Link
           key={program.id}
-          href={`/programs/${program.id}`} // ここでIDページへリンク
+          href={`/programs/${program.id}`} 
           className="block bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-shadow"
         >
           {program.title ?? "タイトルなし"}
