@@ -44,7 +44,7 @@ export default function BlogSection() {
         animate={isInView ? "show" : "hidden"}
         className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8"
       >
-        {/* 見出し */}
+       
         <motion.h2
           variants={item}
           className="text-xl sm:text-2xl lg:text-3xl font-bold text-black mb-4"
@@ -52,7 +52,7 @@ export default function BlogSection() {
           BLOG
         </motion.h2>
 
-        {/* 説明文 */}
+        
         <motion.p
           variants={item}
           className="text-sm sm:text-base lg:text-lg text-gray-700 mb-8 leading-relaxed"
@@ -60,7 +60,7 @@ export default function BlogSection() {
           abema blog 更新中！
         </motion.p>
 
-        {/* ボタン */}
+
         <motion.div variants={item} className="inline-block">
   <Button
     href="https://ameblo.jp/seishiro1126/"
