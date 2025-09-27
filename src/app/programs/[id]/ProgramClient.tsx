@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { ProgramsItem } from "@/lib/programs";
-
+import FromSection from "@/components/main/maincontact/FomeSection";
 const item: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
@@ -225,12 +225,15 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 )}
 
 
-      {/* other セクション */}
-  {/* other セクション */}
+
+<FromSection />
+
+{/* 
+  
 {program.other && (
   <FadeInSection>
     <div className="flex flex-col items-center space-y-4 text-center max-w-4xl w-full px-4">
-      {/* othertitle と otherdetail */}
+     
       {program.othertitle && (
         <h2 className="text-2xl font-semibold">{program.othertitle}</h2>
       )}
@@ -238,7 +241,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
         <p className="whitespace-pre-line">{program.otherdetail}</p>
       )}
 
-      {/* 既存の other 内容 */}
+
       {(() => {
         const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
         const matches = [...program.other.matchAll(regex)];
@@ -264,7 +267,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
       })()}
     </div>
   </FadeInSection>
-)}
+)} */}
 
 
 
