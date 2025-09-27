@@ -17,7 +17,7 @@ export default function MainSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length)
-    }, 3000) // 5秒ごとに切り替え
+    }, 3000) 
 
     return () => clearInterval(interval)
   }, [])
@@ -25,7 +25,7 @@ export default function MainSection() {
   return (
     <main className="relative bg-black">
     <div className="relative h-[90vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] w-full overflow-hidden">
-      {/* 画像群 */}
+    
       {images.map((src, index) => (
         <Image
           key={src}
@@ -39,10 +39,10 @@ export default function MainSection() {
         />
       ))}
   
-      {/* オーバーレイ */}
+  
       <div className="absolute inset-0 bg-white/20 z-10" />
   
-      {/* テキストとボタン */}
+  
       <div className="absolute inset-0 flex flex-col items-end justify-center p-4 sm:p-8 md:p-16 lg:p-20 z-20">
         <h2 className="text-[rgb(241,84,84)] text-2xl sm:text-3xl md:text-4xl font-bold text-right drop-shadow">
           ARMAER FOOTBALL ACADEMY

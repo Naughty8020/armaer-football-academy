@@ -11,7 +11,8 @@ export type CardItem = {
   title: string;
   imageSrc: string;
   imageAlt?: string;
-  href?: string; // 遷移先のパス
+  href?: string; 
+  description?: string; // ← 説明文を追加
 };
 
 type Props = {
@@ -19,7 +20,6 @@ type Props = {
   className?: string;
 };
 
-// アニメーション定義
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -53,7 +53,7 @@ export default function ListSection({
         className="text-black text-2xl font-semibold mb-6 text-center"
         ref={ref}
       >
-        armaerについて
+        ARMAERについて
       </motion.h2>
 
       <motion.div
@@ -83,7 +83,8 @@ export default function ListSection({
               <div>
                 <h3 className="text-lg font-medium mb-2">{itemData.title}</h3>
                 <p className="text-sm text-gray-300">
-                  ここに簡単な説明文が入ります。必要なら長さに合わせて改行されます。
+                  {itemData.description ??
+                    "ここに簡単な説明文が入ります。必要なら長さに合わせて改行されます。"}
                 </p>
               </div>
 
@@ -112,7 +113,6 @@ export default function ListSection({
   );
 }
 
-// デフォルトサンプルデータ
 const defaultItems: CardItem[] = [
   {
     id: 1,
@@ -120,19 +120,22 @@ const defaultItems: CardItem[] = [
     imageSrc: "/team.jpg",
     imageAlt: "プログラム",
     href: "/programs",
+    description: "ARMAER のスクール顧問アンバサダーは現レアルマドリード女子トップチームホセララ氏であり、世界トップの前線で活躍する指導者のメソッドの元世界最高基準のトレーニングを実施しております。",
   },
   {
     id: 2,
     title: "トレーニングコース紹介",
     imageSrc: "/team2.jpeg",
-    imageAlt: "サンプルBの説明",
+    imageAlt: "トレーニング",
     href: "/training",
+    description: "サッカー選手の成長に必要な技術  /  フィジカル  /  戦術理解  /  メンタルをトレーニングの中で落とし込んでいきます。",
   },
   {
     id: 3,
     title: "コーチ紹介",
     imageSrc: "/coaches.jpeg",
-    imageAlt: "サンプルCの説明",
+    imageAlt: "コーチ",
     href: "/coach",
+    description: "ARMAERのコーチは全員が学生であり、選手として現役を続けているコーチ専門学生として学びを深めているコーチ国際大会帯同経験を持つコーチなどで構成されています。",
   },
 ];
