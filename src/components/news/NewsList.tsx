@@ -54,7 +54,7 @@ export default function NewsList({ initialNews }: Props) {
 
   const maxLength = isMobile ? 50 : 150;
 
-  // ページごとのデータ
+
   const totalPages = Math.ceil(initialNews.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = initialNews.slice(startIndex, startIndex + itemsPerPage);
@@ -118,7 +118,7 @@ export default function NewsList({ initialNews }: Props) {
           })}
         </div>
 
-        {/* ページネーション */}
+      
         <div className="flex justify-center mt-8 gap-2">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
             <button
