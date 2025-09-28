@@ -223,11 +223,11 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
   </FadeInSection>
 )}
 
-<FromSection title="お申し込み" />
+{/* <FromSection title="お申し込み" /> */}
 
 
 
-{/* 
+
   
 {program.other && (
   <FadeInSection>
@@ -266,7 +266,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
       })()}
     </div>
   </FadeInSection>
-)} */}
+)} 
 
 
 
