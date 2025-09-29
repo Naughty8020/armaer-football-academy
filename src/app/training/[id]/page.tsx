@@ -32,7 +32,7 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 text-black space-y-6">
-      <h1 className="mt-20 text-3xl font-bold">{program.location}</h1>
+      <h1 className="mt-10 text-3xl font-bold">{program.location}</h1>
 
       {/* 画像表示 */}
       {program.img && (
