@@ -44,10 +44,20 @@ export default async function ProgramPage({ params }: ProgramPageProps) {
       )}
 
       <div className="space-y-2">
-        <p><strong>曜日:</strong> {program.day}</p>
-        <p><strong>時間:</strong> {program.time}</p>
-        <p><strong>場所:</strong> {program.title}</p>
-        <p><strong>対象:</strong> {program.target}</p>
+      <h2 className="mt-4 text-2xl font-bold">{program.subtitle}</h2>
+
+
+
+<p className="mb-7 ">{program.description}</p>
+<div className="mb-7 grid grid-cols-2 gap-4 text-xl w-full">
+  <p><strong>曜日:</strong> {program.day}</p>
+  <p><strong>時間:</strong> {program.time}</p>
+  <p><strong>場所:</strong> {program.title}</p>
+  <p><strong>対象:</strong> {program.target}</p>
+</div>
+
+
+
       </div>
 
  

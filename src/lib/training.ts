@@ -7,7 +7,10 @@ export interface TrainingItem {
     target: string;
     location?: string;
     school?: string;
-  
+    subtitle?: string;
+    description?: string;  
+
+
     // 追加フィールド
     img?: {
       url: string; // microCMS 画像URL
