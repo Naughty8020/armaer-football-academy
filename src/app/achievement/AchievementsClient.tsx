@@ -75,9 +75,7 @@ export default function AchievementsClient({ items }: { items: AchievementItem[]
             選手輩出実績・帯同実績
           </h1>
           <p className="mt-4 text-gray-800">
-            私たちはこれらで学んだことに満足することはありません。<br />
-            もっと多くのチームやリーグ、国から学び続け、<br />
-            日本から世界へと視野を広げ、選手の未来の選択肢を増やします。
+          選手輩出実績と帯同実績の一覧 <br />私たちは日本から世界へ、選手の未来の選択肢を広げます。 
           </p>
         </motion.div>
 
