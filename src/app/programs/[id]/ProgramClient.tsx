@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { ProgramsItem } from "@/lib/programs";
 import FromSection from "@/components/main/maincontact/FomeSection";
+
 const item: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
@@ -13,7 +14,6 @@ const item: Variants = {
     transition: { duration: 0.9, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
-
 
 function FadeInSection({ children }: { children: React.ReactNode }) {
   const ref = useRef(null);
@@ -25,15 +25,14 @@ function FadeInSection({ children }: { children: React.ReactNode }) {
       variants={item}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
-      className="my-12" 
+      className="my-12 flex flex-col items-center w-full"
     >
-      {children}
+      <div className="max-w-4xl w-full mx-auto text-center">{children}</div>
     </motion.section>
   );
 }
 
 export default function ProgramClient({ program }: { program: ProgramsItem }) {
-
   function extractLink(html?: string) {
     if (!html) return null;
     const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/i;
@@ -55,7 +54,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
   return (
     <div className="w-full min-h-screen px-4 py-8 text-black flex flex-col items-center">
       {/* メインタイトル */}
-      <h1 className="text-4xl font-bold text-center mb-12">{program.title}</h1>
+      <h1 className="text-5xl font-bold  mt-8 text-center">{program.title}</h1>
 
       {/* title1 */}
       {program.title1 && (
@@ -67,18 +66,18 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
                 alt={program.title1}
                 width={program.image1.width}
                 height={program.image1.height}
-                className="w-full h-auto rounded-md object-cover filter blur-sm"
+                className="w-full h-auto rounded-md object-cover filter blur-[2px]"
               />
             )}
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
-              <h2 className="text-xl font-semibold text-white mb-2">{program.title1}</h2>
+            <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-10 text-center">
+              <h2 className="text-3xl font-semibold text-white mb-2">{program.title1}</h2>
               <p className="text-white whitespace-pre-line">{program.detail1}</p>
               {linksMap.link1 && (
                 <a
                   href={linksMap.link1.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+                  className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
                 >
                   {linksMap.link1.text}
                 </a>
@@ -88,187 +87,176 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
         </FadeInSection>
       )}
 
-
       {program.title2 && (
         <FadeInSection>
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-xl font-semibold mb-2">{program.title2}</h2>
-            <p className="whitespace-pre-line">{program.detail2}</p>
-            {linksMap.link2 && (
-              <a
-                href={linksMap.link2.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-              >
-                {linksMap.link2.text}
-              </a>
-            )}
-            {program.image2 && (
-              <img
-                src={program.image2.url}
-                alt={program.title2}
-                width={program.image2.width}
-                height={program.image2.height}
-                className="mt-4 max-w-full h-auto rounded-md"
-              />
-            )}
-          </div>
+          <h2 className="text-3xl font-semibold mb-4">{program.title2}</h2>
+          <p className="whitespace-pre-line">{program.detail2}</p>
+          {linksMap.link2 && (
+            <a
+              href={linksMap.link2.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+            >
+              {linksMap.link2.text}
+            </a>
+          )}
+          {program.image2 && (
+            <img
+              src={program.image2.url}
+              alt={program.title2}
+              width={program.image2.width}
+              height={program.image2.height}
+              className="mt-4 max-w-full h-auto rounded-md mx-auto"
+            />
+          )}
         </FadeInSection>
       )}
 
       {program.title3 && (
         <FadeInSection>
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-xl font-semibold mb-2">{program.title3}</h2>
-            <p className="whitespace-pre-line">{program.detail3}</p>
-            {linksMap.link3 && (
-              <a
-                href={linksMap.link3.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-              >
-                {linksMap.link3.text}
-              </a>
-            )}
-            {program.image3 && (
-              <img
-                src={program.image3.url}
-                alt={program.title3}
-                width={program.image3.width}
-                height={program.image3.height}
-                className="mt-4 max-w-full h-auto rounded-md"
-              />
-            )}
-          </div>
+          <h2 className="text-3xl font-semibold mb-4">{program.title3}</h2>
+          <p className="whitespace-pre-line">{program.detail3}</p>
+          {linksMap.link3 && (
+            <a
+              href={linksMap.link3.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+            >
+              {linksMap.link3.text}
+            </a>
+          )}
+          {program.image3 && (
+            <img
+              src={program.image3.url}
+              alt={program.title3}
+              width={program.image3.width}
+              height={program.image3.height}
+              className="mt-4 max-w-full h-auto rounded-md mx-auto"
+            />
+          )}
         </FadeInSection>
       )}
 
-    
       {program.title4 && (
         <FadeInSection>
-          <div className="flex flex-col items-center text-center">
-            <h2 className="text-xl font-semibold mb-2">{program.title4}</h2>
-            {program.image4 && (
-              <img
-                src={program.image4.url}
-                alt={program.title4}
-                width={program.image4.width}
-                height={program.image4.height}
-                className="mt-4 max-w-full h-auto rounded-md"
-              />
-            )}
-            <p className="whitespace-pre-line mt-4">{program.detail4}</p>
-            {linksMap.link4 && (
-              <a
-                href={linksMap.link4.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-              >
-                {linksMap.link4.text}
-              </a>
-            )}
-          </div>
+          <h2 className="text-3xl font-semibold mb-4">{program.title4}</h2>
+          {program.image4 && (
+            <img
+              src={program.image4.url}
+              alt={program.title4}
+              width={program.image4.width}
+              height={program.image4.height}
+              className="mt-4 max-w-full h-auto rounded-md mx-auto"
+            />
+          )}
+          <p className="whitespace-pre-line mt-4">{program.detail4}</p>
+          {linksMap.link4 && (
+            <a
+              href={linksMap.link4.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+            >
+              {linksMap.link4.text}
+            </a>
+          )}
         </FadeInSection>
       )}
-
-{(program.title5 || program.title6 || program.title7) && (
+      
+      {(program.title5 || program.title6 || program.title7) && (
   <FadeInSection>
-    <div className="max-w-6xl w-full mx-auto">
+    {program.listtitle && (
+      <h2 className="text-3xl font-bold mb-8">{program.listtitle}</h2>
+    )}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {[5, 6, 7].map((i) => {
+        const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
+        const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
+        const image = program[`image${i}` as keyof ProgramsItem] as { url: string; width?: number; height?: number } | undefined;
+        const link = linksMap[`link${i}` as keyof typeof linksMap];
+        if (!title) return null;
+        return (
+          <div
+            key={i}
+            className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col text-center h-[420px]" // 高さは固定
+          >
+            {image && (
+              <img
+                src={image.url}
+                alt={title}
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+            )}
+            <div className="p-4 flex flex-col flex-1">
+              <h3 className="text-2xl font-semibold mb-2">{title}</h3>
 
-      {program.listtitle && (
-        <h2 className="text-2xl font-bold mb-6 text-center">
-          {program.listtitle}
-        </h2>
-      )}
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[5, 6, 7].map((i) => {
-          const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
-          const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
-          const image = program[`image${i}` as keyof ProgramsItem] as { url: string; width?: number; height?: number } | undefined;
-          const link = linksMap[`link${i}` as keyof typeof linksMap];
-
-          if (!title) return null;
-          return (
-            <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-              {image && (
-                <img
-                  src={image.url}
-                  alt={title}
-                  className="w-full h-48 object-cover rounded-t-lg"
-                />
-              )}
-              <div className="p-4 flex flex-col">
-                <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                <p className="text-sm whitespace-pre-line">{detail}</p>
-                {link && (
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center"
-                  >
-                    {link.text}
-                  </a>
-                )}
+              {/* detailをスクロール可能に */}
+              <div className="text-sm whitespace-pre-line overflow-y-auto max-h-[120px] px-1">
+                {detail}
               </div>
+
+              {link && (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 self-center bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center"
+                >
+                  {link.text}
+                </a>
+              )}
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   </FadeInSection>
 )}
 
-{/* <FromSection title="お申し込み" /> */}
 
-
-
-
-  
 {program.other && (
   <FadeInSection>
-    <div className="flex flex-col items-center space-y-4 text-center max-w-4xl w-full px-4">
-     
-      {program.othertitle && (
-        <h2 className="text-2xl font-semibold">{program.othertitle}</h2>
-      )}
-      {program.otherdetail && (
-        <p className="whitespace-pre-line">{program.otherdetail}</p>
-      )}
+    {program.othertitle && (
+      <h2 className="text-3xl font-semibold mb-4">{program.othertitle}</h2>
+    )}
 
+    {program.otherdetail && (
+      <p className="whitespace-pre-line mb-6">{program.otherdetail}</p> // 下に余白
+    )}
 
-      {(() => {
-        const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
-        const matches = [...program.other.matchAll(regex)];
-        if (matches.length === 0) {
-          return (
-            <div
-              className="prose max-w-full"
-              dangerouslySetInnerHTML={{ __html: program.other }}
-            />
-          );
-        }
-        return matches.map((match, idx) => (
-          <a
-            key={idx}
-            href={match[1]}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 transition"
-          >
-            {match[2]}
-          </a>
-        ));
-      })()}
-    </div>
+    {(() => {
+      const regex = /<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi;
+      const matches = [...program.other.matchAll(regex)];
+
+      if (matches.length === 0) {
+        return (
+          <div
+            className="prose max-w-full text-center"
+            dangerouslySetInnerHTML={{ __html: program.other }}
+          />
+        );
+      }
+
+      return (
+        <div className="flex flex-col items-center gap-4 mt-6"> 
+          {matches.map((match, idx) => (
+            <a
+              key={idx}
+              href={match[1]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 transition"
+            >
+              {match[2]}
+            </a>
+          ))}
+        </div>
+      );
+    })()}
   </FadeInSection>
-)} 
-
-
+)}
 
     </div>
   );
