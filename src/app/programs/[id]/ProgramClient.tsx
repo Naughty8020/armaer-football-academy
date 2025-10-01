@@ -70,7 +70,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
               />
             )}
             <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-10 text-center">
-              <h2 className="text-3xl font-semibold text-white mb-2">{program.title1}</h2>
+              <h2 className="text-5xl font-semibold text-white mb-2">{program.title1}</h2>
               <p className="text-white whitespace-pre-line">{program.detail1}</p>
               {linksMap.link1 && (
                 <a
@@ -89,7 +89,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 
       {program.title2 && (
         <FadeInSection>
-          <h2 className="text-3xl font-semibold mb-4">{program.title2}</h2>
+          <h2 className="text-5xl font-semibold mb-4">{program.title2}</h2>
           <p className="whitespace-pre-line">{program.detail2}</p>
           {linksMap.link2 && (
             <a
@@ -115,7 +115,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 
       {program.title3 && (
         <FadeInSection>
-          <h2 className="text-3xl font-semibold mb-4">{program.title3}</h2>
+          <h2 className="text-5xl font-semibold mb-9">{program.title3}</h2>
           <p className="whitespace-pre-line">{program.detail3}</p>
           {linksMap.link3 && (
             <a
@@ -141,7 +141,18 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 
       {program.title4 && (
         <FadeInSection>
-          <h2 className="text-3xl font-semibold mb-4">{program.title4}</h2>
+          <h2 className="text-5xl font-semibold mb-4">{program.title4}</h2>
+          <p className="whitespace-pre-line mt-7">{program.detail4}</p>
+          {linksMap.link4 && (
+            <a
+              href={linksMap.link4.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-6 transition"
+            >
+              {linksMap.link4.text}
+            </a>
+          )}
           {program.image4 && (
             <img
               src={program.image4.url}
@@ -151,24 +162,14 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
               className="mt-4 max-w-full h-auto rounded-md mx-auto"
             />
           )}
-          <p className="whitespace-pre-line mt-4">{program.detail4}</p>
-          {linksMap.link4 && (
-            <a
-              href={linksMap.link4.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-            >
-              {linksMap.link4.text}
-            </a>
-          )}
+         
         </FadeInSection>
       )}
       
       {(program.title5 || program.title6 || program.title7) && (
   <FadeInSection>
     {program.listtitle && (
-      <h2 className="text-3xl font-bold mb-8">{program.listtitle}</h2>
+      <h2 className="text-5xl font-bold mb-8">{program.listtitle}</h2>
     )}
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {[5, 6, 7].map((i) => {
@@ -236,7 +237,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 {program.other && (
   <FadeInSection>
     {program.othertitle && (
-      <h2 className="text-3xl font-semibold mb-4">{program.othertitle}</h2>
+      <h2 className="text-5xl font-semibold mb-4">{program.othertitle}</h2>
     )}
 
     {program.otherdetail && (
