@@ -54,7 +54,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
   return (
     <div className="w-full min-h-screen px-4 py-8 text-black flex flex-col items-center">
       {/* メインタイトル */}
-      <h1 className="text-4xl sm:text-5xl font-bold mt-8 text-center break-words">{program.title}</h1>
+      <h1 className="text-2xl sm:text-5xl font-bold mt-8 text-center break-words">{program.title}</h1>
 
       {/* title1 */}
       {program.title1 && (
@@ -70,8 +70,9 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
               />
             )}
             <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-10 text-center">
-              <h2 className="text-3xl sm:text-5xl font-semibold text-white mb-2 break-words">{program.title1}</h2>
-              <p className="text-white whitespace-pre-line">{program.detail1}</p>
+              <h2 className="text-1xl sm:text-5xl font-semibold text-white mb-2 break-words">{program.title1}</h2>
+              <p className="text-xs sm:text-xl text-white whitespace-pre-line">{program.detail1}</p>
+
               {linksMap.link1 && (
                 <a
                   href={linksMap.link1.url}
@@ -89,7 +90,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 
       {program.title2 && (
         <FadeInSection>
-          <h2 className="text-3xl sm:text-5xl font-semibold mb-4 break-words">{program.title2}</h2>
+          <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title2}</h2>
           <p className="whitespace-pre-line">{program.detail2}</p>
           {linksMap.link2 && (
             <a
@@ -115,7 +116,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 
       {program.title3 && (
         <FadeInSection>
-          <h2 className="text-3xl sm:text-5xl font-semibold mb-9 break-words">{program.title3}</h2>
+          <h2 className="text-2xl sm:text-5xl font-semibold mb-9 break-words">{program.title3}</h2>
           <p className="whitespace-pre-line">{program.detail3}</p>
           {linksMap.link3 && (
             <a
@@ -141,7 +142,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
 
       {program.title4 && (
         <FadeInSection>
-          <h2 className="text-3xl sm:text-5xl font-semibold mb-4 break-words">{program.title4}</h2>
+          <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title4}</h2>
           <p className="whitespace-pre-line mt-7">{program.detail4}</p>
           {linksMap.link4 && (
             <a
@@ -168,7 +169,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
       {(program.title5 || program.title6 || program.title7) && (
         <FadeInSection>
           {program.listtitle && (
-            <h2 className="text-3xl sm:text-5xl font-bold mb-8 break-words">{program.listtitle}</h2>
+            <h2 className="text-2xl sm:text-5xl font-bold mb-8 break-words">{program.listtitle}</h2>
           )}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[5, 6, 7].map((i) => {
