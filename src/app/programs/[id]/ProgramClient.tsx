@@ -170,56 +170,56 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
           )}
           {renderImage(program.image4, program.title4)}
         </FadeInSection>
-      )}
-{(program.title5 || program.title6 || program.title7) && (
-  <FadeInSection>
-    {program.listtitle && (
-      <h2 className="text-2xl sm:text-5xl font-bold mb-8 break-words">{program.listtitle}</h2>
-    )}
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[5, 6, 7].map((i) => {
-        const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
-        const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
-        const image = program[`image${i}` as keyof ProgramsItem] as { url: string; width?: number; height?: number } | undefined;
-        const link = linksMap[`link${i}` as keyof typeof linksMap];
-        if (!title) return null;
-
-        return (
-          <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col text-center h-[420px]">
-            {renderImage(image, title)}
-            <div className="p-4 flex flex-col flex-1 relative">
-              <h3 className="text-lg md:text-2xl font-semibold mb-2 break-words">{title}</h3>
-              <div className="text-sm whitespace-pre-line overflow-y-auto max-h-[120px] px-1 relative">
-                {detail}
-                <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white/80 via-white/20 to-transparent pointer-events-none"></div>
-              </div>
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none">
-                <svg
-                  className="w-5 h-5 text-gray-400 animate-bounce"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </div>
-              {link && (
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 self-center bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center"
-                >
-                  {link.text}
-                </a>
-              )}
-            </div>
+      )}{(program.title5 || program.title6 || program.title7) && (
+        <FadeInSection>
+          {program.listtitle && (
+            <h2 className="text-2xl sm:text-5xl font-bold mb-8 break-words">{program.listtitle}</h2>
+          )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[5, 6, 7].map((i) => {
+              const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
+              const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
+              const image = program[`image${i}` as keyof ProgramsItem] as { url: string; width?: number; height?: number } | undefined;
+              const link = linksMap[`link${i}` as keyof typeof linksMap];
+              if (!title) return null;
+      
+              return (
+                <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col text-center h-[420px]">
+                  {renderImage(image, title)}
+                  <div className="p-4 flex flex-col flex-1 relative">
+                    <h3 className="text-lg md:text-2xl font-semibold mb-2 break-words">{title}</h3>
+                    <div className="text-sm whitespace-pre-line overflow-y-auto max-h-[120px] px-1 relative">
+                      {detail}
+                      <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white/80 via-white/20 to-transparent pointer-events-none"></div>
+                    </div>
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none">
+                      <svg
+                        className="w-5 h-5 text-gray-400 animate-bounce"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                    {link && (
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 self-center bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center"
+                      >
+                        {link.text}
+                      </a>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
-  </FadeInSection>
-)}
+        </FadeInSection>
+      )}
+      
 
 
       {program.other && (
