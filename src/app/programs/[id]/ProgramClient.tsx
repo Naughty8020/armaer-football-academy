@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { ProgramsItem } from "@/lib/programs";
-import FromSection from "@/components/main/maincontact/FomeSection";
 
 const item: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -25,9 +24,9 @@ function FadeInSection({ children }: { children: React.ReactNode }) {
       variants={item}
       initial="hidden"
       animate={inView ? "show" : "hidden"}
-      className="my-12 flex flex-col items-center w-full"
+      className=" flex flex-col items-center w-full"
     >
-      <div className="max-w-4xl w-full mx-auto text-center">{children}</div>
+      <div className="w-full  mx-auto text-center">{children}</div>
     </motion.section>
   );
 }
@@ -52,11 +51,11 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
   };
 
   return (
-    <div className="w-full min-h-screen px-4 py-8 text-black flex flex-col items-center">
+    <div className="w-full min-h-screen  text-black flex flex-col items-center">
       {/* メインタイトル */}
-      <h1 className="text-2xl sm:text-5xl font-bold mt-8 text-center break-words">{program.title}</h1>
+      
 
-      {/* title1 */}
+      {/* title1 → 画像だけフル幅 */}
       {program.title1 && (
         <FadeInSection>
           <div className="relative w-full">
@@ -66,13 +65,16 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
                 alt={program.title1}
                 width={program.image1.width}
                 height={program.image1.height}
-                className="w-full h-auto rounded-md object-cover filter blur-[2px]"
+                className="w-full h-auto object-cover filter blur-[2px]" // フル幅
               />
             )}
-            <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-10 text-center">
-              <h2 className="text-1xl sm:text-5xl font-semibold text-white mb-2 break-words">{program.title1}</h2>
-              <p className="text-xs sm:text-xl text-white whitespace-pre-line">{program.detail1}</p>
-
+            <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-10 text-center max-w-4xl mx-auto">
+              <h2 className="text-lg sm:text-4xl font-semibold text-white mb-2 break-words">
+                {program.title1}
+              </h2>
+              <p className="text-sm sm:text-lg text-white whitespace-pre-line">
+                {program.detail1}
+              </p>
               {linksMap.link1 && (
                 <a
                   href={linksMap.link1.url}
@@ -87,36 +89,44 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
           </div>
         </FadeInSection>
       )}
+{/* title2 */}
+{program.title2 && (
+  <FadeInSection>
+    <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words max-w-4xl mx-auto">
+      {program.title2}
+    </h2>
+    <p className="whitespace-pre-line max-w-4xl mx-auto">
+      {program.detail2}
+    </p>
+    {linksMap.link2 && (
+      <a
+        href={linksMap.link2.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+      >
+        {linksMap.link2.text}
+      </a>
+    )}
+    {program.image2 && (
+      <img
+        src={program.image2.url}
+        alt={program.title2}
+        width={program.image2.width}
+        height={program.image2.height}
+        className="mt-4 max-w-4xl w-full h-auto rounded-md mx-auto"
+      />
+    )}
+  </FadeInSection>
+)}
 
-      {program.title2 && (
-        <FadeInSection>
-          <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title2}</h2>
-          <p className="whitespace-pre-line">{program.detail2}</p>
-          {linksMap.link2 && (
-            <a
-              href={linksMap.link2.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-            >
-              {linksMap.link2.text}
-            </a>
-          )}
-          {program.image2 && (
-            <img
-              src={program.image2.url}
-              alt={program.title2}
-              width={program.image2.width}
-              height={program.image2.height}
-              className="mt-4 max-w-full h-auto rounded-md mx-auto"
-            />
-          )}
-        </FadeInSection>
-      )}
 
+      {/* title3 */}
       {program.title3 && (
         <FadeInSection>
-          <h2 className="text-2xl sm:text-5xl font-semibold mb-9 break-words">{program.title3}</h2>
+          <h2 className="text-2xl sm:text-5xl font-semibold mb-9 break-words">
+            {program.title3}
+          </h2>
           <p className="whitespace-pre-line">{program.detail3}</p>
           {linksMap.link3 && (
             <a
@@ -134,15 +144,18 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
               alt={program.title3}
               width={program.image3.width}
               height={program.image3.height}
-              className="mt-4 max-w-full h-auto rounded-md mx-auto"
+              className="mt-4 max-w-4xl w-full h-auto rounded-md mx-auto"
             />
           )}
         </FadeInSection>
       )}
 
+      {/* title4 */}
       {program.title4 && (
         <FadeInSection>
-          <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title4}</h2>
+          <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">
+            {program.title4}
+          </h2>
           <p className="whitespace-pre-line mt-7">{program.detail4}</p>
           {linksMap.link4 && (
             <a
@@ -160,18 +173,21 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
               alt={program.title4}
               width={program.image4.width}
               height={program.image4.height}
-              className="mt-4 max-w-full h-auto rounded-md mx-auto"
+              className="mt-4 max-w-4xl w-full h-auto rounded-md mx-auto"
             />
           )}
         </FadeInSection>
       )}
 
+      {/* list (title5〜7) */}
       {(program.title5 || program.title6 || program.title7) && (
         <FadeInSection>
           {program.listtitle && (
-            <h2 className="text-2xl sm:text-5xl font-bold mb-8 break-words">{program.listtitle}</h2>
+            <h2 className="text-2xl sm:text-5xl font-bold mb-8 break-words">
+              {program.listtitle}
+            </h2>
           )}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[5, 6, 7].map((i) => {
               const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
               const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
@@ -191,7 +207,9 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
                     />
                   )}
                   <div className="p-4 flex flex-col flex-1 relative">
-                    <h3 className="text-lg md:text-2xl font-semibold mb-2 break-words">{title}</h3>
+                    <h3 className="text-lg md:text-2xl font-semibold mb-2 break-words">
+                      {title}
+                    </h3>
                     <div className="text-sm whitespace-pre-line overflow-y-auto max-h-[120px] px-1 relative">
                       {detail}
                       <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white/80 via-white/20 to-transparent pointer-events-none"></div>
@@ -224,10 +242,13 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
         </FadeInSection>
       )}
 
+      {/* other */}
       {program.other && (
         <FadeInSection>
           {program.othertitle && (
-            <h2 className="text-3xl sm:text-5xl font-semibold mb-4 break-words">{program.othertitle}</h2>
+            <h2 className="text-3xl sm:text-5xl font-semibold mb-4 break-words">
+              {program.othertitle}
+            </h2>
           )}
           {program.otherdetail && (
             <p className="whitespace-pre-line mb-6">{program.otherdetail}</p>
@@ -239,14 +260,14 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
             if (matches.length === 0) {
               return (
                 <div
-                  className="prose max-w-full text-center"
+                  className="prose max-w-4xl mx-auto text-center"
                   dangerouslySetInnerHTML={{ __html: program.other }}
                 />
               );
             }
 
             return (
-              <div className="flex flex-col items-center gap-4 mt-6"> 
+              <div className="flex flex-col items-center gap-4 mt-6 max-w-4xl mx-auto">
                 {matches.map((match, idx) => (
                   <a
                     key={idx}
