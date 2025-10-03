@@ -72,22 +72,17 @@ export default function AboutSection() {
                 className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed space-y-4 flex flex-col"
               >
                 <motion.span variants={item}>
-                  ARMAER のスクール顧問アンバサダーは現レアルマドリード女子トップチーム
-                  ホセララ氏であり、世界トップの前線で活躍する指導者のメソッドの元
-                  世界最高基準のトレーニングを実施しております。
+                ARMAER のスクール顧問アンバサダーはレアルマドリートップチームコーチ ホセララ氏であり、世界トップの最前線で活躍する指導者の育成メソッドの元、世界最高基準にトレーニングを実施しております。
                 </motion.span>
                 <motion.span variants={item}>
-                  サッカー選手の成長に必要な <br />
-                  技術 / フィジカル / 戦術理解 / メンタル <br />
-                  をトレーニングの中で落とし込んでいきます。
+                より具体的に説明すると、当アカデミー設立時より大切にして来た、サッカー選手の成長に必要な4つの要素であるテクニック/フィジカル/戦術理解/メンタルをトレーニングの中で落とし込んでいきます。
                 </motion.span>
                 <motion.span variants={item}>
-                  ARMAERのコーチは全員が学生であり、現役選手として活躍するコーチや
-                  専門学生、国際大会帯同経験を持つコーチなどで構成されています。
+                コーチ、アナリスト、選手、国際大会帯同、様々な立場や、経験を持つ指導者が、ホセララ氏指導の元、より強固なサッカー理解を習得し、子ども達の進路実現に向け、全力でサポートを行っております。
                 </motion.span>
-                <motion.span variants={item}>
+                {/* <motion.span variants={item}>
                   世界との差を知るコーチ陣が、サッカーのリアルを伝えていきます。
-                </motion.span>
+                </motion.span> */}
               </motion.div>
             </motion.div>
 
@@ -98,7 +93,7 @@ export default function AboutSection() {
 >
   <div className="relative w-full h-48 sm:h-72 md:h-full">
     <Image
-      src="/main-big-img.jpg"
+      src="/top.jpg"
       alt="サッカーのトレーニング風景"
       fill
       className="rounded-1xl shadow-lg object-cover"
