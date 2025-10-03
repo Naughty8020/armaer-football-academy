@@ -91,15 +91,16 @@ export default function AboutSection() {
   variants={item}
   className="flex-1"
 >
-  <div className="relative w-full h-48 sm:h-72 md:h-full">
-    <Image
-      src="/top.jpg"
-      alt="サッカーのトレーニング風景"
-      fill
-      className="rounded-1xl shadow-lg object-cover"
-      priority
-    />
-  </div>
+<div className="relative w-full aspect-[4/3] sm:aspect-[16/9]">
+  <Image
+    src="/top.jpg"
+    alt="サッカーのトレーニング風景"
+    fill
+    className="rounded-1xl shadow-lg object-cover"
+    priority
+  />
+</div>
+
 </motion.div>
 
           </div>
