@@ -101,13 +101,13 @@ export default function NewsList({ initialNews }: Props) {
           />
         )}
         <div>
-          <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+          <h3 className="text-base sm:text-xl font-semibold text-gray-900">
             {item.title}
           </h3>
           <p className="text-xs sm:text-sm text-gray-900">{item.date}</p>
          
           <div
-    className="text-blue-600 underline hover:text-blue-800"
+    className="text-xs sm:text-sm text-blue-600 underline hover:text-blue-800"
     dangerouslySetInnerHTML={{ __html: item.url }}
   />
         </div>
