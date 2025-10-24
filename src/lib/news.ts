@@ -10,6 +10,7 @@ export type NewsItem = {
       height: number;
     };
     href: string;
+    url: string;
   };
   
  

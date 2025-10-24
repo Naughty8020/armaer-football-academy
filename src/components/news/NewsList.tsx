@@ -26,6 +26,11 @@ const contents: Variants = {
   },
 };
 
+const extractHref = (htmlString: string) => {
+  const match = htmlString?.match(/href="([^"]+)"/);
+  return match ? match[1] : null;
+};
+
 export default function NewsList({ initialNews }: Props) {
   const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set());
   const [isMobile, setIsMobile] = useState(false);
@@ -58,6 +63,7 @@ export default function NewsList({ initialNews }: Props) {
   const totalPages = Math.ceil(initialNews.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = initialNews.slice(startIndex, startIndex + itemsPerPage);
+  console.log({ currentItems });
 
   return (
     <section ref={ref} className="bg-white mb-5 py-16">
@@ -75,47 +81,56 @@ export default function NewsList({ initialNews }: Props) {
         </motion.h2>
 
         <div className="flex flex-col gap-3 sm:gap-6">
-          {currentItems.map((item) => {
-            const isExpanded = expandedIds.has(item.id);
-            const isLong = item.contents.length > maxLength;
+        {currentItems.map((item) => {
+  const isExpanded = expandedIds.has(item.id);
+  const isLong = item.contents.length > maxLength;
+  const url = extractHref(item.url); // ← JSX の外で定義！
 
-            return (
-              <motion.div
-                key={item.id}
-                variants={contents}
-                className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded shadow hover:bg-gray-100 transition flex-col border border-gray-600"
-              >
-                <div className="flex gap-3 sm:gap-4">
-                  {item.images && (
-                    <img
-                      src={item.images.url}
-                      alt={item.title}
-                      className="w-24 h-16 sm:w-32 sm:h-20 object-cover rounded"
-                    />
-                  )}
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-900">{item.date}</p>
-                  </div>
-                </div>
-                <p className="mt-1 sm:mt-2 text-sm sm:text-gray-900 text-gray-900">
-                  {isExpanded
-                    ? item.contents
-                    : item.contents.slice(0, maxLength) + (isLong ? "…" : "")}
-                </p>
-                {isLong && (
-                  <button
-                    onClick={() => toggleExpand(item.id)}
-                    className="mt-1 sm:mt-2 text-blue-500 text-xs sm:text-sm hover:underline self-start"
-                  >
-                    {isExpanded ? "閉じる" : "もっと見る"}
-                  </button>
-                )}
-              </motion.div>
-            );
-          })}
+  return (
+    <motion.div
+      key={item.id}
+      variants={contents}
+      className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded shadow hover:bg-gray-100 transition flex-col border border-gray-600"
+    >
+      <div className="flex gap-3 sm:gap-4">
+        {item.images && (
+          <img
+            src={item.images.url}
+            alt={item.title}
+            className="w-24 h-16 sm:w-32 sm:h-20 object-cover rounded"
+          />
+        )}
+        <div>
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+            {item.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-gray-900">{item.date}</p>
+         
+          <div
+    className="text-blue-600 underline hover:text-blue-800"
+    dangerouslySetInnerHTML={{ __html: item.url }}
+  />
+        </div>
+      </div>
+
+      <p className="mt-1 sm:mt-2 text-sm sm:text-gray-900 text-gray-900">
+        {isExpanded
+          ? item.contents
+          : item.contents.slice(0, maxLength) + (isLong ? "…" : "")}
+      </p>
+
+      {isLong && (
+        <button
+          onClick={() => toggleExpand(item.id)}
+          className="mt-1 sm:mt-2 text-blue-500 text-xs sm:text-sm hover:underline self-start"
+        >
+          {isExpanded ? "閉じる" : "もっと見る"}
+        </button>
+      )}
+    </motion.div>
+  );
+})}
+
         </div>
 
       

@@ -7,7 +7,7 @@ async function fetchNews(): Promise<NewsItem[] | null> {
       headers: { "X-API-KEY": process.env.MICROCMS_API_KEY ?? "" },
       cache: "no-store", 
     });
-
+    
     if (!res.ok) return null;
 
     const data = await res.json();
@@ -20,7 +20,6 @@ async function fetchNews(): Promise<NewsItem[] | null> {
 
 export default async function NewsSection() {
   const news = await fetchNews();
-
   if (!news) {
     return <p className="text-center text-red-500">ニュース情報の取得に失敗しました。</p>;
   }
