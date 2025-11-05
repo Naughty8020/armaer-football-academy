@@ -11,6 +11,7 @@ export type NewsItem = {
     };
     href: string;
     url: string;
+    Category: string; 
   };
   
  
