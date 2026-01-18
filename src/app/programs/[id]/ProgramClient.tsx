@@ -14,6 +14,15 @@ const item: Variants = {
   },
 };
 
+/**
+ * 太く、濃く、画面いっぱいに広がる区切り線
+ */
+function Divider() {
+  return (
+<div className="w-11/12 mx-auto border-t-3 border-gray-500 my-16 sm:my-24" />
+  );
+}
+
 function FadeInSection({ children }: { children: React.ReactNode }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -93,150 +102,164 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
   };
 
   return (
-    <div className="w-full min-h-screen px-4 py-8 text-black flex flex-col items-center">
-      <h1 className="text-2xl sm:text-5xl font-bold mt-8 text-center break-words">{program.title}</h1>
+    <div className="w-full min-h-screen px-4 py-8 text-black flex flex-col items-center overflow-x-hidden">
+      <h1 className="text-2xl sm:text-5xl font-bold mt-8 mb-16 text-center break-words">{program.title}</h1>
 
+      {/* セクション 1 */}
       {program.title1 && (
-        <FadeInSection>
-          <div className="relative w-full">
-            {renderImage(program.image1, program.title1, "filter blur-[2px]")}
-            <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-10 text-center">
-              <h2 className="text-1xl sm:text-5xl font-semibold text-white mb-2 break-words">{program.title1}</h2>
-              <p className="text-xs sm:text-xl text-white whitespace-pre-line">{program.detail1}</p>
-              {linksMap.link1 && (
-                <a
-                  href={linksMap.link1.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-                >
-                  {linksMap.link1.text}
-                </a>
-              )}
+        <>
+          <FadeInSection>
+            <div className="relative w-full">
+              {renderImage(program.image1, program.title1, "filter blur-[2px]")}
+              <div className="absolute inset-0 flex flex-col justify-center items-center px-4 z-10 text-center">
+                <h2 className="text-1xl sm:text-5xl font-semibold text-white mb-2 break-words">{program.title1}</h2>
+                <p className="text-xs sm:text-xl text-white whitespace-pre-line">{program.detail1}</p>
+                {linksMap.link1 && (
+                  <a
+                    href={linksMap.link1.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+                  >
+                    {linksMap.link1.text}
+                  </a>
+                )}
+              </div>
             </div>
-          </div>
-        </FadeInSection>
+          </FadeInSection>
+          {(program.title2 || program.title3 || program.title4 || program.listtitle || program.other) && <Divider />}
+        </>
       )}
 
+      {/* セクション 2 */}
       {program.title2 && (
-        <FadeInSection>
-          <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title2}</h2>
-          <p className="whitespace-pre-line">{program.detail2}</p>
-          {linksMap.link2 && (
-            <a
-              href={linksMap.link2.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-            >
-              {linksMap.link2.text}
-            </a>
-          )}
-          {renderImage(program.image2, program.title2)}
-        </FadeInSection>
+        <>
+          <FadeInSection>
+            <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title2}</h2>
+            <p className="whitespace-pre-line">{program.detail2}</p>
+            {linksMap.link2 && (
+              <a
+                href={linksMap.link2.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+              >
+                {linksMap.link2.text}
+              </a>
+            )}
+            {renderImage(program.image2, program.title2)}
+          </FadeInSection>
+          {(program.title3 || program.title4 || program.listtitle || program.other) && <Divider />}
+        </>
       )}
 
+      {/* セクション 3 */}
       {program.title3 && (
-        <FadeInSection>
-          <h2 className="text-2xl sm:text-5xl font-semibold mb-9 break-words">{program.title3}</h2>
-          <p className="whitespace-pre-line">{program.detail3}</p>
-          {linksMap.link3 && (
-            <a
-              href={linksMap.link3.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
-            >
-              {linksMap.link3.text}
-            </a>
-          )}
-          {renderImage(program.image3, program.title3)}
-        </FadeInSection>
+        <>
+          <FadeInSection>
+            <h2 className="text-2xl sm:text-5xl font-semibold mb-9 break-words">{program.title3}</h2>
+            <p className="whitespace-pre-line">{program.detail3}</p>
+            {linksMap.link3 && (
+              <a
+                href={linksMap.link3.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-4 transition"
+              >
+                {linksMap.link3.text}
+              </a>
+            )}
+            {renderImage(program.image3, program.title3)}
+          </FadeInSection>
+          {(program.title4 || program.listtitle || program.other) && <Divider />}
+        </>
       )}
 
+      {/* セクション 4 */}
       {program.title4 && (
-        <FadeInSection>
-          <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title4}</h2>
-          <p className="whitespace-pre-line mt-7">{program.detail4}</p>
-          {linksMap.link4 && (
-            <a
-              href={linksMap.link4.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-6 transition"
-            >
-              {linksMap.link4.text}
-            </a>
-          )}
-          {renderImage(program.image4, program.title4)}
-        </FadeInSection>
-      )}{(program.title5 || program.title6 || program.title7) && (
-        <FadeInSection>
-          {program.listtitle && (
-            <h2 className="text-2xl sm:text-5xl font-bold mb-8 break-words">
-              {program.listtitle}
-            </h2>
-          )}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[5, 6, 7].map((i) => {
-              const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
-              const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
-              const image = program[`image${i}` as keyof ProgramsItem] as { url: string; width?: number; height?: number } | undefined;
-              const link = linksMap[`link${i}` as keyof typeof linksMap];
-              if (!title) return null;
-      
-              return (
-                <div
-                  key={i}
-                  className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col text-center h-[420px]"
-                >
-                  {image && (
-                    <img
-                      src={image.url}
-                      alt={title}
-                      className="w-full h-48 object-cover rounded-t-lg cursor-pointer"
-                      onClick={() => openModal(image.url, title)}
-                    />
-                  )}
-              <div className="p-4 flex flex-col flex-1 relative">
-  <h3 className="text-lg md:text-2xl font-semibold mb-2 break-words">
-    {title}
-  </h3>
-
-  <div className="text-sm whitespace-pre-line overflow-y-auto max-h-[120px] px-1 relative">
-    {detail}
-
-    {/* 🔹 detailとリンクの間に余白 */}
-    <div className="mt-4" />
-
-    <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white/80 via-white/20 to-transparent pointer-events-none" />
-
-    {link && (
-      <a
-        href={link.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block mx-auto bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center mt-2 mb-8"
-      >
-        {link.text}
-      </a>
-    )}
-  </div>
-
-  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none">
-    <svg className="w-5 h-5 text-gray-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-    </svg>
-  </div>
-</div>
-
-                </div>
-              );
-            })}
-          </div>
-        </FadeInSection>
+        <>
+          <FadeInSection>
+            <h2 className="text-2xl sm:text-5xl font-semibold mb-4 break-words">{program.title4}</h2>
+            <p className="whitespace-pre-line mt-7">{program.detail4}</p>
+            {linksMap.link4 && (
+              <a
+                href={linksMap.link4.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block self-center bg-[rgb(241,84,84)] text-white px-6 py-3 rounded-lg hover:brightness-90 mt-6 transition"
+              >
+                {linksMap.link4.text}
+              </a>
+            )}
+            {renderImage(program.image4, program.title4)}
+          </FadeInSection>
+          {(program.title5 || program.title6 || program.title7 || program.other) && <Divider />}
+        </>
       )}
-      
+
+      {/* リストセクション (5, 6, 7) */}
+      {(program.title5 || program.title6 || program.title7) && (
+        <>
+          <FadeInSection>
+            {program.listtitle && (
+              <h2 className="text-2xl sm:text-5xl font-bold mb-8 break-words">
+                {program.listtitle}
+              </h2>
+            )}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[5, 6, 7].map((i) => {
+                const title = program[`title${i}` as keyof ProgramsItem] as string | undefined;
+                const detail = program[`detail${i}` as keyof ProgramsItem] as string | undefined;
+                const image = program[`image${i}` as keyof ProgramsItem] as { url: string; width?: number; height?: number } | undefined;
+                const link = linksMap[`link${i}` as keyof typeof linksMap];
+                if (!title) return null;
+
+                return (
+                  <div
+                    key={i}
+                    className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col text-center h-[420px]"
+                  >
+                    {image && (
+                      <img
+                        src={image.url}
+                        alt={title}
+                        className="w-full h-48 object-cover rounded-t-lg cursor-pointer"
+                        onClick={() => openModal(image.url, title)}
+                      />
+                    )}
+                    <div className="p-4 flex flex-col flex-1 relative">
+                      <h3 className="text-lg md:text-2xl font-semibold mb-2 break-words">{title}</h3>
+                      <div className="text-sm whitespace-pre-line overflow-y-auto max-h-[120px] px-1 relative">
+                        {detail}
+                        <div className="mt-4" />
+                        <div className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-white/80 via-white/20 to-transparent pointer-events-none" />
+                        {link && (
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block mx-auto bg-[rgb(241,84,84)] text-white px-4 py-2 rounded hover:brightness-90 text-center mt-2 mb-8"
+                          >
+                            {link.text}
+                          </a>
+                        )}
+                      </div>
+                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 pointer-events-none">
+                        <svg className="w-5 h-5 text-gray-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </FadeInSection>
+          {program.other && <Divider />}
+        </>
+      )}
+
+      {/* その他セクション */}
       {program.other && (
         <FadeInSection>
           {program.othertitle && (
@@ -259,7 +282,7 @@ export default function ProgramClient({ program }: { program: ProgramsItem }) {
             }
 
             return (
-              <div className="flex flex-col items-center gap-4 mt-6"> 
+              <div className="flex flex-col items-center gap-4 mt-6">
                 {matches.map((match, idx) => (
                   <a
                     key={idx}
