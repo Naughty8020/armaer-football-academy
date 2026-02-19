@@ -2,7 +2,8 @@
 
 ## サッカースクール「ARMAER FOOTBALL ACADEMY」の公式ウェブサイトです。
 https://armaerfootball.com/
-   
+
+
 
 ### 技術スタック
 
@@ -14,6 +15,8 @@ https://armaerfootball.com/
 
    Deployment: Vercel 
 
+   
+
 ### セットアップ
 開発環境の起動
 
@@ -24,6 +27,8 @@ npm install
 # ローカルサーバーの起動
 npm run dev
 ```
+
+
 
 ### プロジェクト構造
 ```bash
