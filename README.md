@@ -9,6 +9,8 @@
 
    Styling: Tailwind CSS
 
+   API: microCMS
+
    Deployment: Vercel 
 
 ### セットアップ
