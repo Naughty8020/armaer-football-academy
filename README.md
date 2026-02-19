@@ -5,13 +5,11 @@ ARMAER FOOTBALL ACADEMY 公式サイト
 
 技術スタック
 
-    Frontend: React / Next.js (TypeScript)
+   Frontend: React / Next.js (TypeScript)
 
-    Styling: Tailwind CSS
+   Styling: Tailwind CSS
 
-    Icons: Lucide React / FontAwesome
-
-    Deployment: Vercel / Netlify (想定)
+   Deployment: Vercel 
 
 セットアップ
 開発環境の起動
@@ -30,9 +28,6 @@ npm run dev
 
     /src/pages: 各ページ（Home, Training, Contactなど）
 
-    /public: 画像、ロゴ等の静的アセット
-
-    /src/atoms: Jotai 等を使用した状態管理（必要に応じて）
 ```
 ライセンス
 
