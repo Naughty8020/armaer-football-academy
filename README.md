@@ -4,7 +4,7 @@ https://armaerfootball.com/
 
 ---
 
-### 技術スタック  
+## 技術スタック  
   
 Frontend: React / Next.js (TypeScript) 🚀
 
@@ -20,7 +20,7 @@ Package Manager: npm 📦
 ---
    
 
-### セットアップ
+## セットアップ
 開発環境の起動
 
 ```bash
@@ -33,7 +33,7 @@ npm run dev
 
 ---
 
-### プロジェクト構造
+## プロジェクト構造
 ```bash
     src/
  ├── components/   # 🧱 共通コンポーネント
@@ -48,7 +48,7 @@ npm run dev
 
 ```
 ---
-### ライセンス
+## ライセンス
 
 © 2026 ARMAER-FOOTBALL-ACADEMY. All rights reserved.
 
