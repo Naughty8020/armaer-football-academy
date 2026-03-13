@@ -2,7 +2,7 @@
 
 https://armaerfootball.com/
 
-
+---
 
 ### 技術スタック
 
@@ -17,7 +17,7 @@ Deployment: Vercel ▲
 Package Manager: npm 📦
 
    
-
+---
    
 
 ### セットアップ
@@ -31,7 +31,7 @@ npm install
 npm run dev
 ```
 
-
+---
 
 ### プロジェクト構造
 ```bash
@@ -47,6 +47,7 @@ npm run dev
  └── lib/          # ⚙️ APIクライアント (microCMS設定など)
 
 ```
+---
 ### ライセンス
 
 © 2026 ARMAER-FOOTBALL-ACADEMY. All rights reserved.
