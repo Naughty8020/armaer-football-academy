@@ -1,6 +1,6 @@
-# ⚽️ ARMAER FOOTBALL ACADEMY 公式サイト
+# ⚽️ ARMAER FOOTBALL ACADEMY ホームページ
   
-[公式サイトを開く 🌐](https://armaerfootball.com/)
+[ARMAER FOOTBALL ACADEMY🌐](https://armaerfootball.com/)
 
 ---
 
