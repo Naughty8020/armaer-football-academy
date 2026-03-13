@@ -1,19 +1,23 @@
-# ARMAER FOOTBALL ACADEMY 公式サイト
+# ⚽️ ARMAER FOOTBALL ACADEMY 公式サイト
 
-## サッカースクール「ARMAER FOOTBALL ACADEMY」の公式ウェブサイトです。
+## 「ARMAER FOOTBALL ACADEMY」の公式ウェブサイトです。
 https://armaerfootball.com/
 
 
 
 ### 技術スタック
 
-   Frontend: React / Next.js (TypeScript)
+Frontend: React / Next.js (TypeScript) 🚀
 
-   Styling: Tailwind CSS
+Styling: Tailwind CSS 🎨
 
-   API: microCMS
+CMS: microCMS (Headless CMS) 📑
 
-   Deployment: Vercel 
+Deployment: Vercel ▲
+
+Package Manager: npm 📦
+
+   
 
    
 
@@ -32,11 +36,20 @@ npm run dev
 
 ### プロジェクト構造
 ```bash
-    /src/components: 共通コンポーネント（Header, Footer, TextBoxなど）
-
-    /src/pages: 各ページ（Home, Training, Contactなど）
+    src/
+ ├── components/   # 🧱 共通コンポーネント
+ │    ├── Layout/  # Header, Footer など
+ │    └── Elements/# TextBox, Button, Card など
+ ├── pages/        # 📄 各ページ・ルーティング
+ │    ├── index/   # Home (トップページ)
+ │    ├── training/# Training (練習内容)
+ │    └── contact/ # Contact (お問い合わせ)
+ ├── styles/       # 🎨 グローバルCSS (Tailwind設定)
+ └── lib/          # ⚙️ APIクライアント (microCMS設定など)
 
 ```
 ### ライセンス
 
 © 2026 ARMAER-FOOTBALL-ACADEMY. All rights reserved.
+
+
