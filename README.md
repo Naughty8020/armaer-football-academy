@@ -1,11 +1,11 @@
 # ⚽️ ARMAER FOOTBALL ACADEMY 公式サイト
-
+  
 https://armaerfootball.com/
 
 ---
 
-### 技術スタック
-
+### 技術スタック  
+  
 Frontend: React / Next.js (TypeScript) 🚀
 
 Styling: Tailwind CSS 🎨
